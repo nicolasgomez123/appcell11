@@ -45,6 +45,38 @@ li .nav-link{
     background-color: #3285c9;
 }
 
+/*titulos*/
+#contacto, #trabajos, #dispositivo, #nosotros{
+    border-radius: 40px;
+    background-color: #2e5fca;
+    color: #fff;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+}
+
+#contacto_texto{
+    font-size: 25px;
+}
+
+/*Inicio Botones del carrousell*/
+.owl-prev, .owl-next {
+    width: 80px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    display: block !important;
+    border:0px solid rgb(255, 255, 255);
+}
+.owl-prev { left: -70px; }
+.owl-next { right: -70px; }
+.owl-prev i, .owl-next i { transform: scale(2,5); color: rgb(83, 94, 104);}
+
+/*Fin Botones del carrousell*/
+
+
+
 #formulario{
     position: relative;
     display: grid;
@@ -90,16 +122,23 @@ li .nav-link{
     text-transform: capitalize;
 }
 
-.formulario2{
-    position: initial;
+#form3{
+    display: flex;
+}
+
+.formulario2, .datos{
     display: grid;
-    grid-template-columns: repeat(1, 50%) ;
     padding: 40px;
     width: 500px;
     margin: auto;
     margin-bottom: 50px;
     border: 3px solid #000;
     border-radius: 10px;
+}
+
+.formulario2{
+    margin-top: -0px ;
+    height: 240px;
 }
 
 #tecnico{
@@ -129,7 +168,7 @@ li .nav-link{
 #boton3{
     width: 150px;
     position: relative;
-    left: 65%;
+    left: 30%;
     border-radius: 50px;
 }
 
@@ -278,10 +317,20 @@ footer .footer-below{
         margin-bottom: 10px;
     }
 
-
     .iconos{
         margin-left: 350px ;
     }
+
+#form3{
+        display:block;
+}
+
+.datos{
+    margin-top: 30px;
+    width: 485px;
+}
+
+    
 }
 
 @media (max-width: 768px) {
@@ -304,8 +353,12 @@ footer .footer-below{
     textarea#mensaje {
         width: 300px;
     }
-    button#boton2 {
+    #boton2 {
+        width: 150px;
+        position: relative;
+        margin: 5px;
         left: 25%;
+        border-radius: 50px;
     }
 
     .formulario2{
@@ -331,6 +384,42 @@ footer .footer-below{
     }
 }
 
+
 @media (max-width: 576px) {
+
+    #formulario {
+        width: 300px;
+    } 
+
+    #formulario input{
+        width: 250px;
+    }
+
+    #formulario  select{
+        width: 250px;
+    }
+
+    #formulario textarea{
+        width: 250px;
+    }
+
+#form3{
+        display:block;
+}
+
+.datos{
+    margin-top: 30px;
+    width: 350px;
+}
+
+
+#codigo{
+    width: 270px;
+}
+
+.formulario2{
+    margin-top: 30px;
+    width: 350px;
+}
 
 }

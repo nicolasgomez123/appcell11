@@ -1,9 +1,7 @@
 
-
 <?php
   include 'partes/header.php';
 ?>
-
 
   <!--inicio navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
@@ -39,15 +37,6 @@
              CONTACTO</a>
           </li>
 
-          <?php if(!empty($user)): ?>
-      <br> Welcome. <?= $user['email']; ?>
-      <br>You are Successfully Logged In
-      <a href="logout.php">
-        Logout
-      </a>
-    <?php else: ?>
-
-    <?php endif; ?>
 
           <li class="nav-item dropdown">
             <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,12 +61,12 @@
       <div class="cuerpo_principal">
         <div class="row row-md mt-5">
             <div class=" col-6 text-center mt-3" id="titulo">
-              <h2 class="display-5">Servicio Tecnico <br>
+              <h2 class="display-5">Servicio tecnico <br>
                 especializado en <br>
                 dispositivos <br>
               <h2><strong>Apple</strong> <img src="img/appel-icono.png" width="50px" alt="" srcset=""></h2>
               
-              <a href="#contacto"><button id="boton" class="btn btn-outline-dark mt-4"> Registra mi dispositivo</button></a>
+              <a href="#form3"><button id="boton" class="btn btn-outline-dark mt-4"> Ver estado de mi dispositivo</button></a>
             </div>
 
             <div class=" col-6">
@@ -87,7 +76,7 @@
       </div>
       
 
-      <div class="container mt-4">
+    <div class="container mt-4">
         <div class="row">
         <h4 id="subtitulo" class="text-center"><i class="fas fa-tools"></i> Realizamos la reparacion de equipos:</h4>
             <div class="mt-5 mb-5">
@@ -124,51 +113,82 @@
             </div>
           </div>
        <hr> 
-      </div>
+    </div>
 
-      <h3 id="contacto" class="text-center mt-5 mb-5">Formulario de Contacto</h3>
-      <form class=" needs-validation" id="formulario" novalidate>
+      <!--Formulario de contacto  /cambiar el action por watsapp-->
+      <h3 id="contacto" class="text-center mt-5 mb-2">Formulario de Contacto</h3>
+      <p id="contacto_texto" class="text-center mt-3 mb-3">Complete este formulario para contactarnos</p>
+      
+      <form action="index.php" method="POST" class="form-inline" id="formulario" novalidate>
         <div class="mb-3 col-sm-12">
           <label class="form-label text-center position-relative" for=""><strong> Contanos sobre tu dispositivo</strong></label>
-          <select name="" id="modelo" class="form-select" required>
+          <select name="modelo" id="modelo" class="form-select" onchange="enviar(this.form)" required >
             <option value="">selecciona el modelo</option>
               <div class="valid-tooltip">Campo Completado</div>
               <div class="invalid-tooltip">Seleccione una opcion</div>
-              <option value="">opcion-1</option>
-              <option value="">opcion-2</option>
-              <option value="">opcion-3</option>
+              <option value="Godzilla">opcion-1</option>
+              <option value="King-kong">opcion-2</option>
+              <option value="Gidora">opcion-3</option>
           </select>
           <div class="invalid-feedback">Seleccione una opcion</div>
         </div>
 
         <div class="mb-3 col-sm-12">
-          <select name="" id="problema"  class="form-select" required>
+          <select name="problema" id="problema"  class="form-select" onchange="enviar(this.form)"  required>
             <option value="">selecciona el problema</option>
-            <option value="">opcion-1</option>
-            <option value="">opcion-2</option>
-            <option value="">opcion-3</option>
+            <option value="Bulbasur">opcion-1</option>
+            <option value="Pikachu">opcion-2</option>
+            <option value="Charizard">opcion-3</option>
           </select>
           <div class="invalid-feedback">Seleccione una opcion</div>
         </div>
 
         <div class="mb-3 col-sm-6 position-relative">
-          <input id="nombre" type="text" class="form-control" placeholder="Nombre" required>
+          <input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre" required>
           <div class="valid-tooltip">Campo Completado</div>
           <div class="invalid-tooltip">Ingrese un Nombre</div>
         </div>
 
+
         <div class="mb-3 col-sm-3 position-relative">
-          <input id="telefono" type="number" class="form-control" placeholder="telefono" required>
+          <input name="telefono" id="telefono" type="number" class="form-control" placeholder="telefono" required>
           <div class="valid-tooltip">Campo Completado</div>
           <div class="invalid-tooltip">Ingrese un Numero de telefono</div>
         </div>
 
         <div class="mb-3 col-sm-3">
-          <textarea class="form-control" id="mensaje" rows="3" placeholder="Dejanos un mensaje"></textarea>        
+          <textarea class="form-control" name="mensaje" id="mensaje" rows="3" placeholder="Dejanos un mensaje"></textarea>        
         </div>
         <br>
-        <button class="btn btn-primary" onclick="alerta()" id="boton2">Enviar</button>
+        <input type="submit" name="submit" id="boton2" class="btn btn-primary" value="Enviar">
       </form>
+
+      <?php
+  include "bd/conexion.php";
+
+if (isset($_POST['submit'])) {
+try{
+ 
+  $contacto = array(
+    "modelo"    => $_POST['modelo'],
+    "problema"  => $_POST['problema'],
+    "nombre"    => $_POST['nombre'],
+    "telefono"  => $_POST['telefono'],
+    "mensaje"   => $_POST['mensaje'],
+  );
+  $consultaSQL ="INSERT INTO contacto(modelo, problema, nombre, telefono, mensaje) VALUES (:" . implode(", :", array_keys($contacto)) . ")";
+ 
+  $sentencia = $conexion->prepare($consultaSQL);
+  $sentencia->execute($contacto);
+}catch(PDOException $error){
+  $resultado['error'] = true;
+  $resultado['mensaje'] = $error;
+}
+}
+
+?>
+      <!--Fin Formulario de contacto-->
+
 
       
 
@@ -279,71 +299,107 @@
 
       <hr>
 
-      <h3 class="text-center mt-5 mb-5">Ver estado de mi equipo</h3>
-  
+    <!--Inicio Formulario 3-->
+      <h3 id="dispositivo" class="text-center mt-5 mb-5">Ver estado de mi equipo</h3>
+      <div id="form3" class="col-12">
       <div class="formulario2">
-        <form method="" action="">
-          <label for="">Nombre Cliente</label>
-          <input type="text" id="cliente" class="mb-4 form-control" placeholder="Ingrese su nombre">
+        <form action="#dispositivo" method="POST">
   
-          <label for="">Telefono</label>
-          <input type="number" id="tel" class="mb-4 form-control" placeholder="Ingrese su telefono">
-  
+
           <label for="">Codigo del Dispositivo</label>
-          <input type="number" id="codigo" class="mb-4 form-control" placeholder="Ingrese el codigo de su Dispositivo">
-  
-          <label for="">Estado</label>
-          <input type="text" id="estado" class="mb-4 form-control" placeholder="Ingrese el estado de su Dispositivo">
-  
-          <label for="">Observacion</label>
-          <textarea name="" cols="30" id="observacion" class="form-control" rows="10"></textarea>
+          <input type="text" name="codigo" id="codigo" class="mb-4 form-control " placeholder="Ingrese el codigo de su Dispositivo">
   
           <br>
-          <button class="btn btn-primary" id="boton3">Enviar</button>
+          <input type="submit" name="submit2" id="boton3" class="btn btn-primary" value="Enviar">
         </form>
       </div>
 
-        <hr>
+      <?php
+        include "bd/conexion.php";
+        $codigo = $_POST['codigo'];
 
-        <h2 id="nosotros" class="text-center mb-5 mt-4">Informacion del tecnico</h2>
 
-        <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card" id="tecnico">
-              <img src="img/avatar.jpg" class="card-img-top" height="400px" alt="...">
-              <div class="card-body text-center">
-                <h5 class="card-title">Nicolas Gomez</h5>
-                <p class="card-text">Estudiante de programacion y diseño web</p>
-              </div>
-            </div>
-          </div>
-        </div>-->
+        //para evitar inyecciones sql lo ejecutamos en la segunda variable
+        // $sentencia = $conexion->prepare("SELECT * FROM trabajos where telefono = '?' ");;
+        // $sentencia->execute(array($codigo));
+          $sentencia = $conexion->query("SELECT * FROM trabajos where id = '$codigo' LIMIT 1 ");
+          $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
+          // $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+      ?>
+      
+      <div class="datos">
+
+      <?php
+         foreach($clientes as $cliente){
+      ?>
+        <form class="form-datos" action="" method="">
         
+          <label for="">Cliente</label>
+            <input class="mb-4 form-control disabled" value="<?php echo $cliente->cliente?>" >
+    
+            <label for="">Modelo</label>
+            <input type="" id="" class="mb-4 form-control" value="<?php echo $cliente->modelo?>">
+    
+            <label for="">Falla</label>
+            <input type="" id="" class="mb-4 form-control" value="<?php echo $cliente->modelo?>">
+      
+            <label for="">Precio</label>
+            <input type="" id="" class="mb-4 form-control" value="<?php echo $cliente->precio?>">
+    
+            <label for="">Estado</label>
+            <input type="" id="" class="mb-4 form-control"value="<?php echo $cliente->estado?>">
+        </form>
+        <?php
+          }
+        ?>
 
-        <div class="localizacion">
-          <div class="localizaacion__mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28316.96096570272!2d-58.82158995000001!3d-27.481083549999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456b6745a222d1%3A0x798dca366c326036!2sPlaza%20Libertad!5e0!3m2!1ses!2sar!4v1641094258759!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-          
-          <div class="localizacion__info">
-            <h4 class="localizacion__titulo">Titulo</h4>
-            <p class="localizacion__texto">
-              Telefonos: 011 4551-4496  /  011 4551-4479
-            </p> 
-            
-            <p  class="localizacion__texto"> 
-              Email: info@superservicesrl.com.ar
-            </p>
-          </div>
-          <hr>
-        </div>
       </div>
+    </div>
+   
+    <!--Fin Formulario 3-->
+      <hr>
+
+        <h2 id="nosotros" class="text-center mb-5 mt-4">Sobre Nosotros</h2>
+
+        <div class="container mt-4">
+        <div class="row row-2">
+
+            <div class="col-sm-12 col-md-6">
+                <img id="img-1" src="img/appcell-2.jpg" class="img-fluid" width="500px" height="200px" alt="" srcset="">
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+
+                <h4 class="text-center"> ¿Quienes Somos?</h4>
+
+                <p class="text-center mt-3">Somos especialista en reparacion y servicio <br>
+                                       tecnico de dispositivos Apple en Argentina. <br>
+                                       Contamos con un laboratorio propio de <br>
+                                       microelectronica, ademas de capacitacion permanente y <br>
+                                       personal calificado. Trabajamos con los mejores <br>
+                                       repuestos homologados, con amplio stock y un <br>
+                                       servicio agil para que puedas contar con tus <br>
+                                       dispositivos rapidamente. <br>
+                                       Si buscas una solucion seria y confiable, te <br>
+                                       esperamos. Solicita tu presupuesto y pone tu <br> 
+                                       dispositivos en manos de verdaderos <br>
+                                       profecionales.</p>
+            </div>
+        </div>
+    </div>
+    </div> 
+    </div>
+
+
+        </div>
+          <hr>
+      </div>   
     </div> 
 
       
-
+    <!--Inicio cuadros-->
       <h3 id="subtitulo-2" class="text-center mt-4">Te proporcionamos:</h3>
-
       <div class="cuerpo_secundario mt-3">
         <div class="row row-2">
           <div class="col-sm-12 col-md-6 text-center mt-5">
@@ -362,13 +418,14 @@
               <h4><img src="img/camion-icono.png" width="35px" alt="" srcset=""> Recogida a domicilio</h4>
               <p>Con seguro</p>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus inventore nulla obcaecati velit saepe aut aspernatur maxime, temporibus eligendi ab. Voluptate totam nesciunt ex cum omnis quam! Est, dolorem a.</p>
-              </div>
+            </div>
 
-              <div class="col-sm-12 col-md-6 text-center mt-5">
-                <h4><img src="img/billetera-icono.png" width="30px" alt="" srcset=""> Realiza el pago</h4>
-                <p>Cuando este Reparado</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus inventore nulla obcaecati velit saepe aut aspernatur maxime, temporibus eligendi ab. Voluptate totam nesciunt ex cum omnis quam! Est, dolorem a.</p>
-                </div>
+            <div class="col-sm-12 col-md-6 text-center mt-5">
+              <h4><img src="img/billetera-icono.png" width="30px" alt="" srcset=""> Realiza el pago</h4>
+              <p>Cuando este Reparado</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus inventore nulla obcaecati velit saepe aut aspernatur maxime, temporibus eligendi ab. Voluptate totam nesciunt ex cum omnis quam! Est, dolorem a.</p>
+             </div>
+            <!--Fin cuadros-->
         </div>
       </div>
 

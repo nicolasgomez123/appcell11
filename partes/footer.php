@@ -2,13 +2,13 @@
  
   <footer class="text-center footer-style mt-5">
     
-    <div class="container">
+    <div class="container mt-4">
       <div class="row">
         <div class="col-md-4 footer-col">
-          <h3>Direccion</h3>
+          <h3>Contactanos</h3>
           <p>
-           Argentina - Corrientes - Chaco <br>
-            jujuy34
+          Telefonos: 011 4551-4496 / 011 4551-4479 <br>
+          Email: info@superservicesrl.com.ar
           </p>
         </div>
 
@@ -30,8 +30,9 @@
           </ul>
         </div>
         <div class="col-md-4 footer-col">
-          <h3>Marca</h3>
-          <p>Trabajos de calidad</p>
+          <h3>Formas De Pago</h3>
+          <p>Efectivo</p>
+          <p>Tarjetas de devito o credito</p>
         </div>
       </div>
     </div>
@@ -81,8 +82,8 @@
         margin:10,
         nav:true,
         navText:[
-          "<i class='fas fa-angle-left'></i>",
-          "<i class='fas fa-angle-right'></i>"
+          "<i class='fas fa-angle-left  flecha'></i>",
+          "<i class='fas fa-angle-right flecha'></i>"
         ],
             
         responsive:{
