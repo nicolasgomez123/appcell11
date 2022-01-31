@@ -36,9 +36,6 @@ require_once "vistas/parte_superior.php";
         include_once "../bd/conexion.php";
 
         
-        // $consultaSQL= $conexion->query("SELECT * FROM trabajos ");
-        // $trabajos = $consultaSQL->fetchAll(PDO::FETCH_OBJ);
-        
         $sql = "SELECT * FROM trabajos "; 
         $consultaSQL= $conexion->prepare($sql);
         $consultaSQL->execute();
@@ -52,6 +49,7 @@ require_once "vistas/parte_superior.php";
         $totalClientes = $consultaSQL->rowCount();
         $paginas = $totalClientes/20; 
         $paginas = ceil($paginas);
+        
         ?>
       <div class="table-responsive">
         <table class="table table-bordered table-md text-center"  id="tblClientes">
@@ -72,17 +70,17 @@ require_once "vistas/parte_superior.php";
             </thead>
             <tbody>
               <?php
-                if(!$_GET){
-                  header('Location: ../index.php?pagina=1');
-                }
-                if($_GET['pagina']>$paginas || $_GET['pagina']<= 0){
-                  header('Location: index.php?pagina=1');
-                }
+                // if(!$_GET){
+                //   header('Location: ../index.php?pagina=1');
+                //  }
+                // if($_GET['pagina']>$paginas || $_GET['pagina']<= 0){
+                //   header('Location: index.php?pagina=1');
+                // }
                 
-                
+                if($pagina = isset($_GET['pagina'])){;
 
+                
                 $iniciar = ($_GET['pagina']-1)*$clientesPorPagina;
-
                 $sql_clientes = "SELECT * FROM trabajos limit :iniciar,:clientes";
                 $sentencia_clientes = $conexion->prepare($sql_clientes);
                 $sentencia_clientes->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
@@ -112,7 +110,8 @@ require_once "vistas/parte_superior.php";
                   <a href="<?= 'editar_cliente.php?id=' . $trabajo->id ?>">✏️Editar</a>
                 </td>
               </tr>
-              <?php } ?>
+              <?php } } ?>
+    
             </tbody>
         </table>
 

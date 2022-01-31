@@ -72,6 +72,7 @@
             <div class=" col-6">
               <img src="img/appcell-logo.png" class="img-fluid" width="500px" alt="" srcset="">
             </div>
+
         </div>
       </div>
       
@@ -307,7 +308,7 @@ try{
   
 
           <label for="">Codigo del Dispositivo</label>
-          <input type="text" name="codigo" id="codigo" class="mb-4 form-control " placeholder="Ingrese el codigo de su Dispositivo">
+          <input type="text" value= "" name="codigo" id="codigo" class="mb-4 form-control " placeholder="Ingrese el codigo de su Dispositivo">
   
           <br>
           <input type="submit" name="submit2" id="boton3" class="btn btn-primary" value="Enviar">
@@ -316,15 +317,15 @@ try{
 
       <?php
         include "bd/conexion.php";
-        $codigo = $_POST['codigo'];
+        
 
+        if (isset($_POST['submit2'])){
 
-        //para evitar inyecciones sql lo ejecutamos en la segunda variable
-        // $sentencia = $conexion->prepare("SELECT * FROM trabajos where telefono = '?' ");;
-        // $sentencia->execute(array($codigo));
-          $sentencia = $conexion->query("SELECT * FROM trabajos where id = '$codigo' LIMIT 1 ");
-          $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
-          // $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
+       $codigo = $_POST['codigo'];
+        
+        $sentencia = $conexion->query("SELECT * FROM trabajos where id = '$codigo' LIMIT 1 ");
+        $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        
 
       ?>
       
@@ -342,7 +343,7 @@ try{
             <input type="" id="" class="mb-4 form-control" value="<?php echo $cliente->modelo?>">
     
             <label for="">Falla</label>
-            <input type="" id="" class="mb-4 form-control" value="<?php echo $cliente->modelo?>">
+            <input type="" id="" class="mb-4 form-control" value="<?php echo $cliente->falla?>">
       
             <label for="">Precio</label>
             <input type="" id="" class="mb-4 form-control" value="<?php echo $cliente->precio?>">
@@ -353,7 +354,27 @@ try{
         <?php
           }
         ?>
-
+        <?php
+        }else{
+          ?>
+          <form class="form-datos d-none" action="" method="">
+        
+          <label for="">Cliente</label>
+            <input class="mb-4 form-control disabled" value="" >
+    
+            <label for="">Modelo</label>
+            <input type="" id="" class="mb-4 form-control" value="">
+    
+            <label for="">Falla</label>
+            <input type="" id="" class="mb-4 form-control" value="">
+      
+            <label for="">Precio</label>
+            <input type="" id="" class="mb-4 form-control" value="">
+    
+            <label for="">Estado</label>
+            <input type="" id="" class="mb-4 form-control"value="">
+        </form>
+        <?php } ?>
       </div>
     </div>
    
