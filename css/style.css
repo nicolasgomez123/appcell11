@@ -2,424 +2,1037 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family:'Roboto Condensed', sans-serif;
+    font-family:'Roboto Condensed','Helvetica Neue',sans-serif ;
     text-decoration: none;
     /* font-size: 18px; */
 }
 
 body{ 
-    background-image: radial-gradient(circle at 56.16% 120.44%, #bbc2ff 0, #a2adf7 50%, #8898e8 70%);
+    background-image: radial-gradient(circle at 56.16% 120.44%, #6f7bff 0, #8594e7 50%, #3f5efc 70%);
 }
 
-ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
-    margin-left: 25%;
-    padding: 2px;
-    font-size: 20px;
-}
-
-li .nav-link{
-    margin: 10px;
-}
-
-
-.bg-dark {
-    background-color: #030808d3!important; 
-}
-
-.cuerpo_principal{ 
-    height:450px;
-    margin-left: -13px;
-}
-
-.cuerpo_secundario{
-    margin: 50px;
-}
-
-#boton{
-    border-radius: 40px;
-    background-color: #2e5fca;
-    color: #fff;
-}
-
-#boton:hover{
-    background-color: #3285c9;
-}
-
-/*titulos*/
-#contacto, #trabajos, #dispositivo, #nosotros{
-    border-radius: 40px;
-    background-color: #2e5fca;
-    color: #fff;
-    width: 400px;
-    padding: 10px;
-    margin: auto;
-}
-
-#contacto_texto{
-    font-size: 25px;
-}
-
-/*Inicio Botones del carrousell*/
-.owl-prev, .owl-next {
-    width: 80px;
-    height: 100px;
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    display: block !important;
-    border:0px solid rgb(255, 255, 255);
-}
-.owl-prev { left: -70px; }
-.owl-next { right: -70px; }
-.owl-prev i, .owl-next i { transform: scale(2,5); color: rgb(83, 94, 104);}
-
-/*Fin Botones del carrousell*/
-
-
-
-#formulario{
-    position: relative;
-    display: grid;
-    left: 120px;
-    grid-template-columns: repeat(2, 50%) ;
-    padding: 40px;
-    width: 720px;
-    margin: 10px 10px 50px 190px;
-    border: 3px solid #000;
-    border-radius: 10px;
-}
-
-
-#modelo, #problema, #nombre,#telefono, #mensaje{
-    width: 300px;
-    padding: 10px;
-    color: #000;
-    border: 3px solid #2e5fca;
-    text-align: center;
-}
-
-#telefono{
-    margin-left: 20px;
-}
-
-#problema{
-    margin-left: 20px;
-    margin-top: 30px;
-}
-
-#mensaje{
-    width: 635px;
-}
-
-#boton2{
-    width: 150px;
-    position: relative;
-    left: 80%;
-    border-radius: 50px;
-}
-
-#titulo{
-    text-transform: capitalize;
-}
-
-#form3{
-    display: flex;
-}
-
-.formulario2, .datos{
-    display: grid;
-    padding: 40px;
-    width: 500px;
-    margin: auto;
-    margin-bottom: 50px;
-    border: 3px solid #000;
-    border-radius: 10px;
-}
-
-.formulario2{
-    margin-top: -0px ;
-    height: 240px;
-}
-
-#tecnico{
-    position: relative;
-    left: 100%;
-    width: 400px;
-    margin: 5px 10px;
-    border-radius: 1%;
-    }
-
-#cliente, #tel, #estado,#codigo,#observacion{
-    width: 400px;
-    padding: 10px;
-    color: #000;
-    border: 3px solid #2e5fca;
-    text-align: center;
-}
-
-#observacion{
-    text-align: start;
-}
-
-#observacion{
-    height: 100px;
-}
-
-#boton3{
-    width: 150px;
-    position: relative;
-    left: 30%;
-    border-radius: 50px;
-}
-
-
-#subtitulo{
-    background-color: #2e5fca;
-    padding: 14px;
-    margin: 20px 20px 10px 15%;
-    width: 65%;
-    align-content: center;
-    color: #fff;
-    border-radius: 50px;
-    box-shadow: 6px 6px 6px  #000;
-}
-
-#nombre-1, #nombre-2, #nombre-3, #nombre-4{
-    border: 1px solid #000;
-    background: rgb(54, 88, 238);
-    color: #fff;
-    padding: 5px;
-    border-radius: 5%;
-}
-
-#subtitulo-2{
-    background-color: #2e5fca;
-    padding: 14px;
-    margin: auto;
-    width: 40%;
-    align-content: center;
-    color: #fff;
-    border-radius: 50px;
-    box-shadow: 6px 6px 6px  #000;
-}
-
-/*Inicio estilo slider*/
-.item img{
-    height: 280px;
-}
-/*fin estilo slider*/
-
-
-/*Inicio estilos footer*/
-.footer-style{
-    padding-top: 50px ;
-    background-color: #2c3e50;
-}
-
-footer{
-    color: white;
-    font-size: 17px;
-}
-
-#inst li a{
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    margin: 10px 0 0 140px ;
-}
-
-#inst li a:hover{
-    color: #1686f5;
-}
-
-
-
-#cont p {
-    margin-left: 135px;
-    font-size: 20px ;
-}
-
-#cont p img{
-    margin-right: 15px;
-}
-
-#inst li {
-   list-style: none;
-}
-
-footer h3 {
-    margin-bottom: 50px;
-    font-weight: 800;
-
-}
-
-footer .list-inline{
-    display: flex;
-    width: 50%;
-    margin: 0 auto; 
-    font-size: 2em;
-    margin-right: 85px;
-}
-
-footer .footer-above {
-    padding-top: 50px;
-    background-color: #2c3E50;
-}
-
-footer .footer-col{
-    margin-bottom: 50px;
-    font-weight: 300;
-}
-
-footer .footer-below{
-    padding: 25px 0;
-    background-color: #233140;
-}
-
-/*fin estilos footer*/
-
-@media (max-width: 1200px) {
-	body{
-		font-size: 14px;
-	}
-}
-
-@media (max-width: 992px) {
-	#formulario {
-        display: grid;
-        grid-template-columns: repeat(1, 50%);
-        padding: 25px;
-        margin: 10px;
-        border: 5px solid #000;
-        border-radius: 10px;
-        width: 350px;
-        margin-left: 140px;
-    } 
-    select#problema {
-        margin: 0px;
-    } 
-    input#telefono {
-        margin-left: 0px;
-    }
-    textarea#mensaje {
-        width: 300px;
-    }
-    button#boton2 {
-        left: 40%;
-    }
-
-    ul.navbar-nav.me-auto.mb-2.mb-lg-0{
-        margin-left: 45%;
-        margin-top: 10px;
+/*Inicio estilos navbar*/
+    ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+        margin-left: 25%;
+        padding: 2px;
+        font-size: 20px;
     }
 
     li .nav-link{
-        margin-bottom: 10px;
+        margin: 10px;
     }
 
-    .iconos{
-        margin-left: 350px ;
+    .bg-dark {
+        background-color: #030808d3!important; 
+    }
+/*fin estilos navbar*/
+
+/*Inicio estilos cuerpo principal*/
+    #titulo_principal{
+        text-transform: capitalize;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        font-size: 50px;
     }
 
-#form3{
-        display:block;
-}
+    .cuerpo_principal{ 
+        height:450px;
+        margin-left: -13px;
+    }
 
-.datos{
-    margin-top: 30px;
-    width: 485px;
-}
+    #appel-icono:hover{
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        transition: 3.2ms;
+    }
 
-    
-}
+    #boton{
+        border-radius: 40px;
+        background-color: #2e5fca;
+        color: #fff;
+        outline: 2px solid black;
+        outline-offset: 3px;
+    }
 
-@media (max-width: 768px) {
-	#formulario {
-        position: initial;
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        padding: 25px;
-        width: 57%;
+    #boton:hover{
+        background-color: #3285c9;
+    }
+/*fin estilos cuerpo principal*/
+
+/* Inicio Tarjetas de reparacion */
+
+    #titulo_reparacion{
+        border-radius: 40px;
+        background-color: #2e5fca;
+        color: #fff;
+        width: 500px;
+        padding: 10px;
         margin: auto;
-        border: 5px solid #000;
+        box-shadow: 6px 6px 6px  #000;
+    }
+
+    /*Inicio estilos tarjeta*/
+    #tarjetas{
+        border-radius: 0 60px 0 60px;
+        background-color: #fff;
+        padding: 20px;
+        width: 250px;
+        margin:17px;
+    }
+
+    #tarjetas_img{
+        background-color: #000;
+        overflow: hidden;
+        border-radius: 0 60px 0 0;
+        padding: 10px;
+        width: auto
+        /* width:200px; */
+    }
+    /*Fin estilos tarjeta*/
+
+/* Fin Tarjetas de reparacion */
+
+/* Inicio estilos formulario de contacto*/
+    
+    #contacto_texto{
+        font-size: 25px;
+        color: #fff;
+    }
+
+    #formulario_contacto{
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 50%) ;
+        padding: 40px;
+        width: 720px;
+        margin: auto;
+        border: 2px solid #000;
+        border-radius: 0 40px 0 40px;
+        background-color: #fff;
+        font-weight: 300;
+}
+
+    #modelo, #problema, #nombre,#telefono, #mensaje{
+        width: 300px;
+        padding: 10px;
+        color: #000;
+        border: 5px solid #3f5efc ;
+    }
+
+    #telefono{
+        margin-left: 20px;
+    }
+    
+    #problema{
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+    
+    #mensaje{
+        width: 635px;
+    }
+
+    #boton_contacto{
+        width: 150px;
+        position: relative;
+        left: 80%;
+        border-radius: 50px;
+        outline: 2px solid black;
+        outline-offset: 3px;
+    }
+/* Fin estilos formulario de contacto*/
+
+/*Inicio estilos carrousel */
+
+    /*Inicio estilo slider*/
+        .item img{
+            height: 280px;
+        }
+
+        /*Inicio Botones del slider*/
+            .owl-prev, .owl-next {
+                width: 80px;
+                height: 100px;
+                position: absolute;
+                top: 40%;
+                transform: translateY(-50%);
+                display: block !important;
+                border:0px solid rgb(255, 255, 255);
+            }
+            .owl-prev { left: -70px; }
+            .owl-next { right: -70px; }
+            .owl-prev i, .owl-next i { transform: scale(2,5); color: rgb(77, 72, 70);}
+        /*Fin Botones del slider*/
+    /*fin estilo slider*/
+
+/*Fin estilos carrousel */
+
+/*Inicio estilos Formulario consulta */
+    
+    #form_divicion{
+        display: flex;
+    }
+
+    .formulario_consulta, .datos{
+        display: grid;
+        padding: 40px;
+        width: 500px;
+        margin: auto;
+        margin-bottom: 50px;
+        border: 3px solid #000;
         border-radius: 10px;
-} 
-    select#problema {
-        margin: 0px;
-    } 
-    input#telefono {
-        margin-left: 0px;
-    }
-    textarea#mensaje {
-        width: 300px;
-    }
-    #boton2 {
-        width: 150px;
-        position: relative;
-        margin: 5px;
-        left: 25%;
-        border-radius: 50px;
-    }
-
-    .formulario2{
-        width: 485px;
-        margin: auto;
-        position: initial;
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-    }
-
-    #boton3{
-        width: 150px;
-        position: relative;
-        margin: 5px;
-        left: 35%;
-        border-radius: 50px;
+        background-color: #fff;
+        font-weight: 600;
     }
     
-    #tecnico{
-        width: 400px;
-        margin: auto;
-        border-radius: 1%;
+    .formulario_consulta{
+        margin-top: -0px ;
+        height: 240px;
     }
+
+    #cliente, #tel, #estado,#codigo,#observacion{
+        width: 400px;
+        padding: 10px;
+        color: #000;
+        border: 5px solid #3f5efc ;
+        text-align: center;
+        
+    }
+    
+    #observacion{
+        text-align: start;
+        color: #1686f5;
+    }
+
+    #boton_consulta{
+        width: 150px;
+        position: relative;
+        left: 30%;
+        border-radius: 50px;
+        outline: 2px solid black;
+        outline-offset: 3px;
+    }
+    
+
+/*Fin estilos Formulario consulta */
+
+/*Inicio estilos Sobre Nosotros */
+
+    #texto_imagen{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    #imagen_appcell{
+        border-radius: 0 50px 0 0;
+        height: 450px;
+        width: hidden;
+        margin: 0;
 }
 
+    #quienes_somos_texto{
+        font-size:larger;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 50px 0 0 0;
+        
+}
 
-@media (max-width: 576px) {
+/*fin estilos Sobre Nosotros */
 
-    #formulario {
-        width: 300px;
+/*Inicio estilos cuadros*/
+
+    #cuadros{
+        display: grid;
+        grid-template-rows: repeat(4, 100%);
+        grid-template-columns: repeat(2,100%);
+        margin-left: 160px;
+    }
+
+    #cuadro_bg{
+        background-color: #fff;
+        padding: 15px;
+        margin: 30px;
+        border-radius: 10px;
+        width: 365px;  
+    }
+
+    #titulo_servicios{
+        background-color: #2e5fca;
+        padding: 14px;
+        margin: auto;
+        width: 40%;
+        align-content: center;
+        color: #fff;
+        border-radius: 50px;
+        box-shadow: 6px 6px 6px  #000;
+    }
+
+/*Fin estilos cuadros*/
+
+/* Inicio estilos de titulos*/
+    #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros{
+        border-radius: 40px;
+        background-color: #2e5fca;
+        color: #fff;
+        width: 400px;
+        padding: 10px;
+        margin: auto;
+        box-shadow: 6px 6px 6px  #000;
+    }
+/* Fin estilos de titulos*/
+
+/*Inicio estilos footer*/
+    .footer-style{
+        padding-top: 50px ;
+        background-color: #2c3e50;
+    }
+
+    footer{
+        color: white;
+        font-size: 17px;
+    }
+
+    #inst li a{
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        margin: 10px 0 0 140px ;
+    }
+
+    #inst li a:hover{
+        color: #1686f5;
+    }
+
+    #cont p {
+        margin-left: 135px;
+        font-size: 20px ;
+    }
+
+    #cont p img{
+        margin-right: 15px;
+    }
+
+    #inst li {
+    list-style: none;
+    }
+
+    footer h3 {
+        margin-bottom: 50px;
+        font-weight: 800;
+    }
+
+    footer .list-inline{
+        display: flex;
+        width: 50%;
+        margin: 0 auto; 
+        font-size: 2em;
+        margin-right: 85px;
+    }
+
+    footer .footer-above {
+        padding-top: 50px;
+        background-color: #2c3E50;
+    }
+
+    footer .footer-col{
+        margin-bottom: 50px;
+        font-weight: 300;
+    }
+
+    footer .footer-below{
+        padding: 25px 0;
+        background-color: #233140;
+    }
+
+/*fin estilos footer*/
+
+/* Inicio de @Media queris */
+
+/* Inicio de @Media 1024px*/
+@media (max-width: 1280px) {
+    body{
+        font-size: 14px;
+    }
+
+    #icono_inicio{
+        margin-left: 10px;
+    }
+    #icono_nosotros{
+        margin-left: 30px;
+    }
+    #icono_servicios{
+        margin-left: 25px;
+    }
+    #icono_contacto, #icono_trabajos{
+        margin-left: 30px;
+    }
+    #icono_usuario{
+        margin-left: 20px;
+    }
+    
+    #formulario_contacto{
+        margin:auto;
+    }
+
+    .owl-prev, .owl-next {
+        width: 90px;
+    }
+
+    .owl-prev { left: -40px; }
+    .owl-next { right: -40px; }
+
+    #form3{
+        display:block;
+    }
+
+    .datos{
+        margin-top: 30px;
+        width: 350px;
+    }
+
+    #cuadro_bg{
+        margin: 5px 6px 5px 50px;
+        width: 340px;
+    }    
+
+
+}
+/* Fin de @Media 1024px*/
+
+/* Inicio de @Media 1024px*/
+@media (max-width: 1024px) {
+            body{
+                font-size: 14px;
+            }
+
+            #icono_inicio{
+                margin-left: 10px;
+            }
+            #icono_nosotros{
+                margin-left: 30px;
+            }
+            #icono_servicios{
+                margin-left: 25px;
+            }
+            #icono_contacto, #icono_trabajos{
+                margin-left: 30px;
+            }
+            #icono_usuario{
+                margin-left: 20px;
+            }
+
+            #tarjetas{
+                width:205px;
+            }
+            
+            #formulario_contacto{
+                margin: auto;
+            }
+
+            #cuadro_bg{
+                margin: 5px 30px 5px 0px;
+                width: 320px;
+            }        
+
+            .owl-prev, .owl-next {
+                width: 90px;
+            }
+
+            .owl-prev { left: -40px; }
+            .owl-next { right: -40px; }
+
+            #form3{
+                display:block;
+            }
+
+            .datos{
+                margin-top: 30px;
+                width: 350px;
+            }
+
+}
+/* Fin de @Media 1024px*/
+
+/* Inicio de @Media 992px*/
+@media (max-width: 992px) {
+            #formulario_contacto {
+                display: grid;
+                grid-template-columns: repeat(1, 50%);
+                padding: 25px;
+                margin: 10px;
+                border: 5px solid #000;
+                border-radius: 10px;
+                width: 350px;
+                margin-left: 140px;
+            } 
+            select#problema {
+                margin: 0px;
+            } 
+            input#telefono {
+                margin-left: 0px;
+            }
+            textarea#mensaje {
+                width: 300px;
+            }
+            button#boton2 {
+                left: 40%;
+            }
+
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0{
+                margin-left: 45%;
+                margin-top: 10px;
+            }
+
+            li .nav-link{
+                margin-bottom: 10px;
+            }
+
+            .iconos{
+                margin-left: 350px ;
+            }
+
+        #form_divicion{
+                display:block;
+        }
+
+        .datos{
+            margin-top: 30px;
+            width: 485px;
+        }
+        
+}
+/* fin de @Media 992px*/
+
+/* Inicio de @Media 912px*/
+@media (max-width: 912px) {
+    
+    #tarjetas{
+        width:300px;
+        margin:auto;
+    }
+
+    #formulario_contacto{
+        margin: auto;
+    }
+
+    #boton_contacto {
+        margin: 50px;
+        left: 15%;
+    }
+
+    #cuadro_bg{
+        margin: 5px 10px 0 10px;
+        width: 250px;
+    }
+
+}
+/* fin de @Media 912px*/
+
+
+/* Inicio de @Media 820px*/
+@media (max-width: 820px) {
+    
+    #tarjetas{
+        width:135px;
+    }
+
+    #formulario_contacto {
+        margin: auto;
     } 
 
-    #formulario input{
+    #boton_contacto {
+        margin: 50px;
+        left: 15%;
+    }
+
+    #cuadro_bg{
+        margin: 5px 10px 0 10px;
         width: 250px;
     }
 
-    #formulario  select{
-        width: 250px;
+}
+/* fin de @Media 820px*/
+
+
+/* Inicio de @Media 768px*/
+@media (max-width: 768px) {
+            #formulario_contacto {
+                position: initial;
+                display: grid;
+                grid-template-columns: repeat(1, 90%);
+                padding: 25px;
+                width: 57%;
+                margin: auto;
+                border: 5px solid #000;
+                border-radius: 10px;
+        } 
+
+
+            select#problema, #nombre, #modelo, #telefono {
+                margin: 0px;
+                width: 380px;
+            } 
+            
+            textarea#mensaje {
+                width: 380px;
+            }
+            #boton_consulta {
+                width: 150px;
+                position: relative;
+                margin: 5px;
+                left: 35%;
+                border-radius: 50px;
+            }
+
+            .formulario_consulta{
+                width: 485px;
+                margin: auto;
+                position: initial;
+                display: grid;
+                grid-template-columns: repeat(1, 90%);
+            }
+
+            #boton_contacto{
+                width: 150px;
+                position: relative;
+                margin: 5px;
+                left: 28%;
+                border-radius: 50px;
+            }
+            
+            #tecnico{
+                width: 400px;
+                margin: auto;
+                border-radius: 1%;
+            }
+
+            #tarjetas{
+                width:300px;
+                margin:auto;
+            }
+
+            #texto_imagen{
+                display: flex;
+            }
+
+            #imagen_appcell{
+                order:1;
+                border-radius: 0 40px 0 0;
+
+            }
+
+            #quienes_somos_texto{
+                order: 2;
+                border-radius: 0 0 0 40px;
+                width: 695px;
+                margin-left: 12px;
+            }
+
+            #cuadros{
+                margin-left: 100px;
+            }
+
+            #cuadro_bg{
+                margin: auto 0 0 25px;
+                width: 250px;
+            }
+    
+}
+/* fin de @Media 768px*/
+
+/* Inicio de @Media 576px*/
+@media (max-width: 576px) {
+            #formulario_contacto {
+                width: 300px;
+            } 
+
+            #formulario_contacto input{
+                width: 250px;
+            }
+
+            #formulario_contacto  select{
+                width: 250px;
+            }
+
+            #formulario_contacto textarea{
+                width: 250px;
+            }
+
+        #formulario_consulta{
+                display:block;
+        }
+
+        .datos{
+            margin-top: 30px;
+            width: 350px;
+        }
+
+
+        #codigo{
+            width: 270px;
+        }
+
+        .formulario_consulta{
+            margin-top: 30px;
+            width: 350px;
+        }
+
+        #tarjetas{
+            width:400px;
+        }
+
+}
+/* fin de @Media 576px*/
+
+/*Inicio de @media 540 */
+@media (max-width: 540px){
+           
+            #tarjetas{
+                width:400px;
+            }
+}
+/*fin de @media 540 */
+
+/*Inicio de @media 498 */
+@media (max-width: 498px) {
+    .cuerpo_principal{
+        display: flex;
     }
 
-    #formulario textarea{
-        width: 250px;
+    #appcell_img{
+        width: 400px;
+        order: 1;
+        margin-left: 50px;
     }
 
-#form3{
-        display:block;
-}
+    #titulo_principal{
+        order: 2;
+        font-style:initial;
+        font-size: 35px;
+    }
+  
+    #boton2{
+        margin-right: 500px;
+    }
 
-.datos{
-    margin-top: 30px;
-    width: 350px;
-}
+    #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios{
+        width: 300px;
+        font-size:20px;
+        margin-top: 150px;
+    }
+
+    #tarjetas{
+        width:250px;
+    }
+
+    #boton_contacto{
+        width: 50px;
+        position: relative;
+        left: -4%;
+    }
+
+    #boton_consulta{
+        position: relative;
+        left: 23%;
+    }
+
+    #quienes_somos_texto{
+        width: 450px;
+    }
+
+    #cuadros{
+        margin-left: 55px;
+    }
+
+    #cuadro_bg{
+        margin-left: 25px ;
+        width: 160px;
+        font-size: 13px;
+    }
+    
+
+    .owl-prev, .owl-next {
+        width: 100px;
+    }
+
+    .owl-prev { left: -10px; }
+    .owl-next { right: -10px; }
 
 
-#codigo{
-    width: 270px;
 }
+/*fin de @media 498 */
 
-.formulario2{
-    margin-top: 30px;
-    width: 350px;
+/*Inicio de @media 412 */
+@media (max-width: 414px) {
+    .cuerpo_principal{
+        display: flex;
+    }
+
+    #appcell_img{
+        width: 300px;
+        order: 1;
+        margin-left: 55px;
+    }
+
+    #titulo_principal{
+        order: 2;
+        font-style:initial;
+    }
+  
+    #boton2{
+        margin-right: 500px;
+    }
+
+    #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios{
+        width: 300px;
+        font-size:20px;
+        margin-top: 60px;
+    }
+
+    #tarjetas{
+        width:250px;
+    }
+
+    #boton_contacto{
+        width: 50px;
+        position: relative;
+        left: -4%;
+    }
+
+    #boton_consulta{
+        position: relative;
+        left: 23%;
+    }
+
+    #quienes_somos_texto{
+        width: 390px;
+    }
+
+    #cuadros{
+        width: 255px;
+        margin: 60px;
+    }
+    
+
+    .owl-prev, .owl-next {
+        width: 100px;
+    }
+
+    .owl-prev { left: -10px; }
+    .owl-next { right: -10px; }
+
+
 }
+/*fin de @media 412 */
+
+/*Inicio de @media 393 */
+@media (max-width: 393px){
+    #quienes_somos_texto{
+        width: 368px;
+    }
+
+    #cuadros{
+        width: 355px;
+        margin-right: 30px;
+    }
 }
+/*Inicio de @media 390 */
+
+
+/*Inicio de @media 390 */
+@media (max-width: 390px){
+    #quienes_somos_texto{
+        width: 365px;
+    }
+
+    #cuadros{
+        width: 255px;
+        margin: 60px;
+    }
+   
+}
+/*Inicio de @media 390 */
+
+
+/*Inicio de @media 375 */
+@media (max-width: 375px) {
+
+    .cuerpo_principal{
+        display: flex;
+    }
+
+    #appcell_img{
+        width: 300px;
+        order: 1;
+        margin-left: 40px;
+    }
+
+    #titulo_principal{
+        order: 2;
+    }
+
+    #boton2{
+        margin-right: 500px;
+    }
+
+    #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios{
+        width: 300px;
+        font-size:20px;
+        margin-top: 60px;
+    }
+
+    #tarjetas{
+        width:250px;
+    }
+
+    #boton_contacto{
+        width: 50px;
+        position: relative;
+        left: -4%;
+    }
+
+    #boton_consulta{
+        position: relative;
+        left: 23%;
+    }
+
+    #quienes_somos_texto{
+        width: 350px;
+    }
+
+    #cuadros{
+        width: 255px;
+        margin: 60px 5px 0 0;
+    }
+
+    .owl-prev, .owl-next {
+        width: 100px;
+    }
+
+    .owl-prev { left: -15px; }
+    .owl-next { right: -15px; }
+
+}
+/*fin de @media 375 */
+
+/*Inicio de @media 375 */
+@media (max-width: 360px) {
+
+    #quienes_somos_texto{
+        width: 335px;
+    }
+
+    #cuadro_bg{
+        margin: 5px 0 0 30px;
+        width: 325px;
+    }
+
+    .formulario_consulta, .datos{
+        width: 330px;
+    }
+
+}
+/*fin de @media 375 */
+
+
+/*Inicio de @media 280 */
+@media (max-width: 280px) {
+    .cuerpo_principal{
+        display: flex;
+    }
+
+    #appcell_img{
+        width: 250px;
+        order: 1;
+        margin-left: 15px;
+    }
+
+    #titulo_principal{
+        order: 2;
+        font-style:initial;
+    }
+  
+    #boton2{
+        margin-right: 500px;
+    }
+
+    #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios{
+        width: 200px;
+        font-size:18px;
+        margin-top: 60px;
+    }
+
+    #tarjetas{
+        width:200px;
+    }
+
+    #formulario_contacto {
+        width: 275px;
+    }
+
+    #formulario_contacto select{
+        width:  200px;
+    }
+
+    #formulario_contacto input{
+        width:  200px;
+    }
+
+    #formulario_contacto textarea{
+        width:  200px;
+    }
+
+    #form_divicion{
+        width: 5px;
+    }
+
+    #formulario_consulta{
+        width: 50px;
+    }
+
+    #form_divicion input{
+        width: 150px;
+    }
+
+    .formulario_consulta{
+        width: 260px;
+    }
+
+    .formulario_consulta, .datos {
+        width: 260px;
+    }
+   
+    #boton_contacto{
+        width: 50px;
+        position: relative;
+        left: -4%;
+    }
+
+    #boton_consulta{
+        position: relative;
+        left: 3%;
+    }
+
+    #quienes_somos_texto{
+        width: 231px;
+    }
+
+    #cuadro_bg{
+        margin: 5px 0 0 13px;
+        width: 375px;
+    }
+
+    .owl-prev, .owl-next {
+        width: 100px;
+    }
+
+    .owl-prev { left: -10px; }
+    .owl-next { right: -10px; }
+
+
+}
+/*fin de @media 280 */
+
+/* fin de @Media queris */
 

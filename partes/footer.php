@@ -26,7 +26,6 @@
             <li>
               <a href=""><img src="img/instagram-icono.png" width="50px" alt="" srcset=""></a>            
             </li>
-
           </ul>
         </div>
         <div class="col-md-4 footer-col">
@@ -36,7 +35,14 @@
         </div>
       </div>
     </div>
-</footer>
+    <hr>
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy;  Appcel 2022</span>
+            </div>
+          </div>
+          
+  </footer>
   
       
 
@@ -101,4 +107,7 @@
     </script>
     
   </body>
-</html>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  </html>

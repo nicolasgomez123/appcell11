@@ -29,7 +29,7 @@ $('#formLogin').submit(function(e){
                        confirmButtonText:'Ingresar',
                    }).then((result) => {
                        if(result.value){
-                            window.location.href = "admin";//vistas/pag_inicio.php
+                            window.location.href = "admin/index.php?pagina=1";//vistas/pag_inicio.php
                         }
                     });
                 }

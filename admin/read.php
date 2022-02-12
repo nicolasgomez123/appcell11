@@ -1,3 +1,26 @@
+<?php
+
+include '../bd/conexion.php';
+
+$consulta = "SELECT * FROM trabajos";
+
+$busqueda= null;
+if(isset($_GET["busqueda"])){
+    $busqueda = $_GET["busqueda"];
+    $consulta = "SELECT * FROM trabajos where cliente LIKE ?";
+}
+
+$sentencia = $conexion->prepare($consulta, [
+    PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL,
+]);
+
+if($busqueda === null){
+    $sentencia->execute();
+}else{
+    $parametros = ["%$busqueda%"];
+    $sentencia->execute($parametros);
+}
+?>
 <?php 
 include_once "../bd/conexion.php";
 session_start();
@@ -10,8 +33,11 @@ if(isset($_SESSION["usuario"])){
 require_once "vistas/parte_superior.php"; 
 ?>
 
+
+
         <!--CONTENT-HEADER-->
-      <section class="content-header ">
+         <!--CONTENT-HEADER-->
+  <section class="content-header ">
 
         <div class="container">
 
@@ -45,12 +71,10 @@ require_once "vistas/parte_superior.php";
                             </div>
                         </div>
                     </form>
-
-
             </div>
           </div>
         </div>
-      </section>
+  </section>
 
       <div class="container">
         <div class="btb btn-danger"></div>
@@ -92,12 +116,7 @@ require_once "vistas/parte_superior.php";
             </thead>
             <tbody>
               <?php  
-                if($pagina = isset($_GET['pagina'])){;
-
-                
-                include "lista.php";
-         
-                foreach($resultado_clientes as $trabajo){
+                while($trabajo = $sentencia->fetchObject()){
               ?>
               <tr>
                 <td scope="row"><?php echo $trabajo->id?></td>
@@ -119,7 +138,7 @@ require_once "vistas/parte_superior.php";
                 </td>
               
               </tr>
-              <?php } } ?>
+              <?php }  ?>
     
             </tbody>
         </table>
