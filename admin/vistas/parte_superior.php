@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
     
+    
+
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -47,16 +49,16 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.php?pagina=1">
                 <i class="fas fa-address-book"></i>
-                    <span>Lista Clientes</span></a>
+                    <span>Lista De Trabajos</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <!-- <div class="sidebar-heading">
                 Cambios
-            </div>
+            </div> -->
 
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -66,16 +68,13 @@
                     <span>Editar Cliente</span></a>
             </li> -->
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Cosas
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -93,13 +92,19 @@
                         <a class="collapse-item" href="blank.html">Blank Page</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Estadisticas</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="usuario.php">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Usuario</span></a>
             </li>
 
         </ul>
@@ -166,7 +171,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
+                                <span class="badge badge-danger badge-counter">1+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -288,22 +293,30 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['usuario'];  ?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="../img/usuario-icono.png">
-                            </a>
+                                <?php
+                                    include_once "../bd/conexion.php";
+
+                                    $sql= "SELECT * FROM roles";
+                                    $consultaSQL = $conexion->prepare($sql);
+                                    $consultaSQL->execute();
+
+                                    $usuarios = $consultaSQL->fetchAll(PDO::FETCH_OBJ);
+
+                                    foreach($usuarios as $usuario){
+                                ?>
+                                    src="<?php echo $usuario->imagen ?>">
+                            
+                                <?php }?>    </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="../admin/usuario.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    Perfil
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="../salir.php" >

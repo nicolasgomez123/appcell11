@@ -9,6 +9,7 @@
         $sentencia = $conexion->query("SELECT * FROM trabajos where id = '$codigo' LIMIT 1 ");
         $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
         
+        
 
       ?>
       

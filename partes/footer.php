@@ -4,34 +4,33 @@
     
     <div class="container mt-4">
       <div class="row">
-        <div class="col-md-4 footer-col">
-          <h3>Contactanos</h3>
-          <p>
-          Telefonos: 011 4551-4496 / 011 4551-4479 <br>
-          Email: info@superservicesrl.com.ar
-          </p>
+        <div id="ins" class="col-md-4 footer-col">
+          <h3>Institucional</h3>
+          <ul>
+            <li>Nosotros</li>
+            <li>Servicios</li>
+            <li>Trabajos</li>
+          </ul>
         </div>
 
-        <div class="col-md-4 footer-col">
-          <h3>Nuestra Redes</h3>
-          <ul class="list-inline">
+        <div id="ins" class="col-md-4 footer-col">
+          <h3>Contacto</h3>
+          <ul>
             <li>
-              <a href=""><img src="img/facebook-icono.png" width="50px" alt="" srcset=""></a>
+                <p>32432432</p>
             </li>
-
             <li>
-              <a href=""><img src="img/whatsapp-icono.png" width="50px" alt="" srcset=""></a>            
-            </li>
-
-            <li>
-              <a href=""><img src="img/instagram-icono.png" width="50px" alt="" srcset=""></a>            
+                <p>Formulario de contacto</p>
             </li>
           </ul>
         </div>
-        <div class="col-md-4 footer-col">
-          <h3>Formas De Pago</h3>
-          <p>Efectivo</p>
-          <p>Tarjetas de devito o credito</p>
+
+        <div id="ins" class="col-md-4 footer-col">
+          <h3>Nuestras redes</h3>
+          <ul>
+            <li>/appcell.rcia</li>
+            <li>/instagram.com</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -57,32 +56,9 @@
     <!--inclucion del cdn del carusell -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-    <!--Validacion del formulario-->
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
-    </script>
-
-    <!--OWl-carousel-->
-    <script>
+ <!--OWl-carousel-->
+ <script>
           $('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
@@ -110,4 +86,6 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/popper.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   </html>

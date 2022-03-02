@@ -4,12 +4,12 @@
     box-sizing: border-box;
     font-family:'Roboto Condensed','Helvetica Neue',sans-serif ;
     text-decoration: none;
-    /* font-size: 18px; */
 }
 
 body{ 
-    background-image: radial-gradient(circle at 56.16% 120.44%, #6f7bff 0, #8594e7 50%, #3f5efc 70%);
+    background-image: radial-gradient(circle at 56.16% 120.44%, #1c2df0 0, #1c2df0 50%, #1c2df0 70%);
 }
+
 
 /*Inicio estilos navbar*/
     ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
@@ -44,7 +44,7 @@ body{
         -webkit-transform: scale(1.5);
         transform: scale(1.5);
         transition: 3.2ms;
-    }
+}
 
     #boton{
         border-radius: 40px;
@@ -73,6 +73,8 @@ body{
 
     /*Inicio estilos tarjeta*/
     #tarjetas{
+        border: 5px solid #000;
+
         border-radius: 0 60px 0 60px;
         background-color: #fff;
         padding: 20px;
@@ -86,14 +88,17 @@ body{
         border-radius: 0 60px 0 0;
         padding: 10px;
         width: auto
-        /* width:200px; */
     }
     /*Fin estilos tarjeta*/
 
 /* Fin Tarjetas de reparacion */
 
 /* Inicio estilos formulario de contacto*/
-    
+
+    #form-cont{
+        margin-left: 150px;
+    }
+
     #contacto_texto{
         font-size: 25px;
         color: #fff;
@@ -104,16 +109,17 @@ body{
         display: grid;
         grid-template-columns: repeat(2, 50%) ;
         padding: 40px;
-        width: 720px;
+        width: 600px;
         margin: auto;
         border: 2px solid #000;
         border-radius: 0 40px 0 40px;
         background-color: #fff;
         font-weight: 300;
+        height: 450px;
 }
 
     #modelo, #problema, #nombre,#telefono, #mensaje{
-        width: 300px;
+        width: 250px;
         padding: 10px;
         color: #000;
         border: 5px solid #3f5efc ;
@@ -129,7 +135,7 @@ body{
     }
     
     #mensaje{
-        width: 635px;
+        width: 530px;
     }
 
     #boton_contacto{
@@ -139,6 +145,32 @@ body{
         border-radius: 50px;
         outline: 2px solid black;
         outline-offset: 3px;
+    }
+
+    .redes{
+        border: 3px solid #000;
+        width: 280px;
+        height: 250px;
+        text-align: center;
+        background-color: #fff;
+        list-style: none;
+        border-radius: 15px;
+        margin: 0 20px 0 100px;
+    }
+    
+    .redes ul li a p{
+        color: #000;     
+        margin: 7px;
+    }
+    
+    .redes ul li {
+        list-style: none;
+    
+    }
+    
+    .redes ul li a {
+        display: flex;
+        text-decoration: none;
     }
 /* Fin estilos formulario de contacto*/
 
@@ -162,6 +194,10 @@ body{
             .owl-prev { left: -70px; }
             .owl-next { right: -70px; }
             .owl-prev i, .owl-next i { transform: scale(2,5); color: rgb(77, 72, 70);}
+
+            .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot{
+                width: 55px;
+            }
         /*Fin Botones del slider*/
     /*fin estilo slider*/
 
@@ -254,7 +290,8 @@ body{
         padding: 15px;
         margin: 30px;
         border-radius: 10px;
-        width: 365px;  
+        width: 365px; 
+        border: 1px solid #000;
     }
 
     #titulo_servicios{
@@ -271,7 +308,7 @@ body{
 /*Fin estilos cuadros*/
 
 /* Inicio estilos de titulos*/
-    #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros{
+    #titulo_instagram, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros{
         border-radius: 40px;
         background-color: #2e5fca;
         color: #fff;
@@ -285,7 +322,11 @@ body{
 /*Inicio estilos footer*/
     .footer-style{
         padding-top: 50px ;
-        background-color: #2c3e50;
+        background-color: #030808d3;
+    }
+
+    .footer-col ul li{
+       list-style: none;
     }
 
     footer{
@@ -293,16 +334,10 @@ body{
         font-size: 17px;
     }
 
-    #inst li a{
-        text-decoration: none;
-        color: #fff;
-        display: flex;
-        margin: 10px 0 0 140px ;
+    #ins ul li{
+        margin-right: 50px;
     }
 
-    #inst li a:hover{
-        color: #1686f5;
-    }
 
     #cont p {
         margin-left: 135px;
@@ -322,17 +357,8 @@ body{
         font-weight: 800;
     }
 
-    footer .list-inline{
-        display: flex;
-        width: 50%;
-        margin: 0 auto; 
-        font-size: 2em;
-        margin-right: 85px;
-    }
-
     footer .footer-above {
         padding-top: 50px;
-        background-color: #2c3E50;
     }
 
     footer .footer-col{
@@ -342,10 +368,10 @@ body{
 
     footer .footer-below{
         padding: 25px 0;
-        background-color: #233140;
-    }
+}
 
 /*fin estilos footer*/
+
 
 /* Inicio de @Media queris */
 
@@ -451,11 +477,15 @@ body{
                 width: 350px;
             }
 
+            #form-cont {
+                margin: 10px -39px;
+            }
 }
 /* Fin de @Media 1024px*/
 
 /* Inicio de @Media 992px*/
 @media (max-width: 992px) {
+
             #formulario_contacto {
                 display: grid;
                 grid-template-columns: repeat(1, 50%);
@@ -479,12 +509,20 @@ body{
                 left: 40%;
             }
 
-            ul.navbar-nav.me-auto.mb-2.mb-lg-0{
-                margin-left: 45%;
-                margin-top: 10px;
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+                margin: auto;
+                align-items: center;
+
             }
 
-            li .nav-link{
+            .navbar-nav .nav-link {
+                padding-right: 0;
+                padding-left: 0;
+                display: grid;
+            }
+
+            li .nav-link {
+                margin-top: 20px;
                 margin-bottom: 10px;
             }
 
@@ -500,40 +538,19 @@ body{
             margin-top: 30px;
             width: 485px;
         }
+
+        #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios {
+            width: 300px;
+            font-size: 20px;
+            margin-top: 150px;
+        }
         
 }
 /* fin de @Media 992px*/
 
 /* Inicio de @Media 912px*/
 @media (max-width: 912px) {
-    
-    #tarjetas{
-        width:300px;
-        margin:auto;
-    }
-
-    #formulario_contacto{
-        margin: auto;
-    }
-
-    #boton_contacto {
-        margin: 50px;
-        left: 15%;
-    }
-
-    #cuadro_bg{
-        margin: 5px 10px 0 10px;
-        width: 250px;
-    }
-
-}
-/* fin de @Media 912px*/
-
-
-/* Inicio de @Media 820px*/
-@media (max-width: 820px) {
-    
-    #tarjetas{
+   #tarjetas{
         width:135px;
     }
 
@@ -546,97 +563,42 @@ body{
         left: 15%;
     }
 
-    #cuadro_bg{
-        margin: 5px 10px 0 10px;
+    #cuadro_bg {
+        margin: 10px 100px 10px -70px;
         width: 250px;
     }
 
-}
-/* fin de @Media 820px*/
+    #form-cont {
+        margin-left: 0px; 
+    }
 
+    #modelo, #problema, #nombre, #telefono, #mensaje {
+        width: 300px;
+    }
+
+    #formulario_contacto {
+        padding: 30px;
+        height: 500px;
+        width: 370px;
+    }
+
+    .col-md-6 {
+        margin-bottom: 100px;
+    }
+
+    .card {
+        width: 270px;
+    }
+
+}
+/* fin de @Media 912px*/
 
 /* Inicio de @Media 768px*/
 @media (max-width: 768px) {
-            #formulario_contacto {
-                position: initial;
-                display: grid;
-                grid-template-columns: repeat(1, 90%);
-                padding: 25px;
-                width: 57%;
-                margin: auto;
-                border: 5px solid #000;
-                border-radius: 10px;
-        } 
+    #form-cont {
+        margin-left: -50px
+    }
 
-
-            select#problema, #nombre, #modelo, #telefono {
-                margin: 0px;
-                width: 380px;
-            } 
-            
-            textarea#mensaje {
-                width: 380px;
-            }
-            #boton_consulta {
-                width: 150px;
-                position: relative;
-                margin: 5px;
-                left: 35%;
-                border-radius: 50px;
-            }
-
-            .formulario_consulta{
-                width: 485px;
-                margin: auto;
-                position: initial;
-                display: grid;
-                grid-template-columns: repeat(1, 90%);
-            }
-
-            #boton_contacto{
-                width: 150px;
-                position: relative;
-                margin: 5px;
-                left: 28%;
-                border-radius: 50px;
-            }
-            
-            #tecnico{
-                width: 400px;
-                margin: auto;
-                border-radius: 1%;
-            }
-
-            #tarjetas{
-                width:300px;
-                margin:auto;
-            }
-
-            #texto_imagen{
-                display: flex;
-            }
-
-            #imagen_appcell{
-                order:1;
-                border-radius: 0 40px 0 0;
-
-            }
-
-            #quienes_somos_texto{
-                order: 2;
-                border-radius: 0 0 0 40px;
-                width: 695px;
-                margin-left: 12px;
-            }
-
-            #cuadros{
-                margin-left: 100px;
-            }
-
-            #cuadro_bg{
-                margin: auto 0 0 25px;
-                width: 250px;
-            }
     
 }
 /* fin de @Media 768px*/
@@ -645,6 +607,7 @@ body{
 @media (max-width: 576px) {
             #formulario_contacto {
                 width: 300px;
+                padding: 20px;
             } 
 
             #formulario_contacto input{
@@ -687,10 +650,106 @@ body{
 
 /*Inicio de @media 540 */
 @media (max-width: 540px){
-           
-            #tarjetas{
-                width:400px;
-            }
+    .cuerpo_principal{
+        display: flex;
+    }
+
+    #boton_consulta {
+        left: 20%;
+    }
+
+    #form-cont {
+         margin-left: 0;
+    }
+
+
+    #titulo_principal{
+        order: 2;
+        font-style:initial;
+        font-size: 35px;
+    }
+    
+    #titulo_reparacion, #titulo_instagram, #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios{
+        width: 300px;
+        font-size:20px;
+        margin-top: 400px;
+    }
+    
+    #tarjetas{
+        width:200px;
+        margin: auto;
+    }
+    
+    .col-md-6 {
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    #boton_contacto {
+        margin: 30px 0px 20px -20px;
+    }
+
+    hr {
+        margin: 4rem 0;
+    }
+
+    
+    .card {
+        width: 500px;
+    }
+
+    .item img {
+        height: 280px;
+        width: 300px;
+    }
+
+    .owl-prev, .owl-next {
+        width: 100px;
+    }
+
+    .owl-next {
+        right: -5px;
+    }
+
+    .owl-prev {
+        left: -5px;
+    }
+
+    #texto_imagen{
+        display: flex;
+        margin:auto;
+    }
+
+    #appcell_img {
+        width: 494px;
+        order: 1;
+        margin: 0 25px;
+    }
+
+    #quienes_somos_texto {
+        order: 2;
+        font-size: 17px;
+        border-radius: 0 0 10px 10px;
+        width: 468px;
+        margin-left: 12px;
+    }
+
+    #cuadros{
+        margin: auto;
+    }
+
+    #cuadro_bg {
+        margin: 0px 0 12px 32px;
+        width: 213px;
+        font-size: 13px;
+    }
+
+    #sds{
+        width: 490px;
+        height:700px
+    }
+
+
 }
 /*fin de @media 540 */
 
@@ -700,8 +759,14 @@ body{
         display: flex;
     }
 
+    #titulo_reparacion, #titulo_instagram, #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios{
+        width: 300px;
+        font-size:20px;
+        margin-top: 60px;
+    }
+
     #appcell_img{
-        width: 400px;
+        width: 450px;
         order: 1;
         margin-left: 50px;
     }
@@ -711,7 +776,7 @@ body{
         font-style:initial;
         font-size: 35px;
     }
-  
+
     #boton2{
         margin-right: 500px;
     }
@@ -719,7 +784,7 @@ body{
     #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios{
         width: 300px;
         font-size:20px;
-        margin-top: 150px;
+        margin-top: 190px;
     }
 
     #tarjetas{
@@ -733,8 +798,7 @@ body{
     }
 
     #boton_consulta{
-        position: relative;
-        left: 23%;
+        margin: auto;
     }
 
     #quienes_somos_texto{
@@ -758,6 +822,10 @@ body{
 
     .owl-prev { left: -10px; }
     .owl-next { right: -10px; }
+
+    #sds{
+        width: 340px;
+    }
 
 
 }
@@ -784,36 +852,26 @@ body{
         margin-right: 500px;
     }
 
-    #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios{
-        width: 300px;
-        font-size:20px;
-        margin-top: 60px;
+    #titulo_reparacion, #titulo_contacto, #titulo_trabajos, #titulo_dispositivo, #titulo_nosotros, #titulo_servicios {
+    width: 300px;
+    font-size: 20px;
+    margin-top: 150px;
     }
 
     #tarjetas{
         width:250px;
+        margin:auto;
     }
 
     #boton_contacto{
-        width: 50px;
         position: relative;
-        left: -4%;
+        left: 17%;
     }
 
     #boton_consulta{
         position: relative;
         left: 23%;
     }
-
-    #quienes_somos_texto{
-        width: 390px;
-    }
-
-    #cuadros{
-        width: 255px;
-        margin: 60px;
-    }
-    
 
     .owl-prev, .owl-next {
         width: 100px;
@@ -822,6 +880,57 @@ body{
     .owl-prev { left: -10px; }
     .owl-next { right: -10px; }
 
+    #sds{
+        width: 350px;
+        height:600px
+    }
+
+    #cuadros{
+    margin: auto;
+    }
+
+    #cuadro_bg{
+        width: 300px;
+        margin: auto;
+    }
+
+    #imagen_appcell {
+        width: 340px;
+    }
+ 
+    #quienes_somos_texto{
+        width: 340px;
+    }
+
+    hr {
+        margin: 4rem 0 0 0;
+    }
+
+    #form-cont{
+        display: flex;
+        margin: 25px;
+    }
+
+    .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+        width: 55px;
+    }
+
+    .redes{
+        margin: 20px auto;
+            }
+
+    #formulario_contacto{
+        margin-bottom: 30px;
+    }
+
+    .card {
+        width: 350px;
+        margin: auto;
+    }
+
+    .owl-carousel .owl-item img {
+        width: 98%;
+    }
 
 }
 /*fin de @media 412 */
@@ -829,28 +938,28 @@ body{
 /*Inicio de @media 393 */
 @media (max-width: 393px){
     #quienes_somos_texto{
-        width: 368px;
+        width: 317px;
+        font-size:14px;
     }
 
     #cuadros{
         width: 355px;
         margin-right: 30px;
     }
-}
-/*Inicio de @media 390 */
 
-
-/*Inicio de @media 390 */
-@media (max-width: 390px){
-    #quienes_somos_texto{
-        width: 365px;
+    .formulario_consulta {
+        width: 336px;
     }
 
-    #cuadros{
-        width: 255px;
-        margin: 60px;
+    #boton_consulta {
+        left: 19%;
     }
-   
+
+    #codigo {
+        width: 246px;
+        font-size: 16px;
+    }
+    
 }
 /*Inicio de @media 390 */
 
@@ -858,6 +967,14 @@ body{
 /*Inicio de @media 375 */
 @media (max-width: 375px) {
 
+    #cliente, #tel, #estado, #codigo, #observacion {
+        font-size: 13px;
+    }
+    
+    #codigo {
+        width: 225px;
+    }
+    
     .cuerpo_principal{
         display: flex;
     }
@@ -892,13 +1009,14 @@ body{
         left: -4%;
     }
 
-    #boton_consulta{
-        position: relative;
-        left: 23%;
+    .formulario_consulta {
+        width: 325px;
     }
 
+   
+
     #quienes_somos_texto{
-        width: 350px;
+        width: 326px;
     }
 
     #cuadros{
@@ -913,6 +1031,21 @@ body{
     .owl-prev { left: -15px; }
     .owl-next { right: -15px; }
 
+    #titulo_reparacion {
+        margin-top: 150px;
+    }
+
+    .redes {
+        margin: 2px 0 20px 35px;
+    }
+
+    #codigo {
+        width: 235px;
+    }
+    
+    #cliente, #tel, #estado, #codigo, #observacion {
+        font-size: 15px;
+    }
 }
 /*fin de @media 375 */
 
@@ -920,7 +1053,11 @@ body{
 @media (max-width: 360px) {
 
     #quienes_somos_texto{
-        width: 335px;
+        width: 288px;
+    }
+
+    .formulario_consulta {
+        width: 307px;
     }
 
     #cuadro_bg{
@@ -928,10 +1065,33 @@ body{
         width: 325px;
     }
 
-    .formulario_consulta, .datos{
-        width: 330px;
+    #formulario_contacto {
+        margin: 10px -18px;
     }
 
+    .redes {
+        margin: 10px auto;
+    }
+
+    #boton_consulta {
+        left: 14%;
+    }
+
+    .card {
+        width: 318px;
+    }
+
+    .owl-carousel .owl-item img {
+        width: 98%;
+    }
+
+    #cliente, #tel, #estado, #codigo, #observacion {
+        font-size: 14px;
+    }
+    
+    #codigo {
+        width: 221px;
+    }
 }
 /*fin de @media 375 */
 

@@ -4,55 +4,54 @@
 ?>
 
   <!--inicio navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
-    <div class="container-fluid ">
-      <a class="navbar-brand" href="index.html">
-        <img src="img/logo-principal.png" width="60px" alt="" srcset="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="index.php"><img id="icono_inicio" src="img/inicio-icono.png" width="30px" alt="" srcset="">
-               INICIO </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#nosotros"><img id="icono_nosotros" src="img/nosotros-icono.png" width="30px" alt="" srcset="">
-              NOSOTROS</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="#subtitulo"><img id="icono_servicios" src="img/servicios-icono.png" width="30px" alt="" srcset="">
-              SERVICIOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#trabajos"><img id="icono_trabajos" src="img/trabajos-iconos.png" width="30px" alt="" srcset="">
-              TRABAJOS</a>
-          </li>
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo-principal.png" width="60px" alt="" srcset="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="index.php"><img id="icono_inicio" src="img/inicio-icono.png" width="30px" alt="" srcset="">
+                INICIO </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#titulo_nosotros"><img id="icono_nosotros" src="img/nosotros-icono.png" width="30px" alt="" srcset="">
+                NOSOTROS</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#titulo_reparacion"><img id="icono_servicios" src="img/servicios-icono.png" width="30px" alt="" srcset="">
+                SERVICIOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#titulo_trabajos"><img id="icono_trabajos" src="img/trabajos-iconos.png" width="30px" alt="" srcset="">
+                TRABAJOS</a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto"><img id="icono_contacto" src="img/telefono-icono.png" width="30px" alt="" srcset="">
-             CONTACTO</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#titulo_contacto"><img id="icono_contacto" src="img/telefono-icono.png" width="30px" alt="" srcset="">
+              CONTACTO</a>
+            </li>
 
 
-          <li class="nav-item dropdown">
-            <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img id="icono_usuario" src="img/usuario-icono.png" alt="" width="30px" srcset="">
-               USUARIO
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item"  href="login.html">Acceder</a></li>
-              <li><a class="dropdown-item" href="signup.php">Registrarme</a></li>
-            </ul>
-          </li>
-        </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img id="icono_usuario" src="img/usuario-icono.png" alt="" width="30px" srcset="">
+                USUARIO
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item"  href="login.html">Acceder</a></li>
+              </ul>
+            </li>
+            
+        
       </div>
-    </div>
-  </nav>
-<!--fin navbar-->
+    </nav>
+  <!--fin navbar-->
 
   <body>
     
@@ -63,7 +62,7 @@
         <div class="cuerpo_principal">
           <div class="row mt-5">
               <div class="col-sm-6 col-md-6 text-center mt-3" id="titulo_principal">
-                <p >Servicio tecnico <br>
+                <p>Servicio tecnico <br>
                   especializado en <br>
                   dispositivos <br>
                 </p>
@@ -75,7 +74,8 @@
               </div>
 
               <div class="col-sm-6 col-md-6">
-                <img id="appcell_img" src="img/appcell-logo.png" class="img-fluid" width="550px" >
+                 <img id="appcell_img" src="img/appcell-logo-2.png" class="img-fluid" width="650px" > 
+                <!-- <h1 id="app">Appcell</h1> -->
               </div>
           </div>
       <!--fin Parte principal-->
@@ -84,7 +84,7 @@
        
     <!-- Inicio Tarjetas de reparacion-->
       <div class="container mt-4">
-        <h3 id="titulo_reparacion" class="text-center"><i class="fas fa-tools"></i> Realizamos la reparacion de equipos:</h3>
+        <h3 id="titulo_reparacion" class="text-center"><img src="img/destornillador-icono.png" width="30px"> Realizamos la reparacion de equipos:</h3>
       
             <div class="mt-5 mb-5">
                 <div class="row ">
@@ -125,7 +125,6 @@
                       </div>
                 </div>
 
-                </div>
               </div>
               <hr> 
             </div>   
@@ -134,50 +133,82 @@
 
 
     <!--Formulario de contacto  /cambiar el action por watsapp-->
-      <h3 id="titulo_contacto" class="text-center mt-5 mb-2">Formulario de Contacto</h3>
-      <p id="contacto_texto" class="text-center mt-3 mb-3">Complete este formulario para contactarnos</p>
+      <h3 id="titulo_contacto" class="text-center mt-5 mb-2"><img src="img/hoja-icono.png" width="30px"> Formulario de Contacto</h3>
+      <p id="contacto_texto" class="text-center mt-3 mb-5">Complete este formulario para contactarnos</p>
       
-      <form action="" method="POST" class="form-inline" id="formulario_contacto">
-        <div class="mb-3 col-sm-12">
-          <label class="form-label text-center position-relative" for=""><strong> Contanos sobre tu dispositivo</strong></label>
-          <select name="modelo" id="modelo" class="form-select" onchange="enviar(this.form)" required="" >
-            <option value="">selecciona el modelo</option>
-              <option value="Godzilla">opcion-1</option>
-              <option value="King-kong">opcion-2</option>
-              <option value="Gidora">opcion-3</option>
-          </select>
-          <div class="invalid-feedback">Seleccione una opcion</div>
+      <div class="row" id="form-cont">
+      
+      <div  class="redes col-md-6" >
+
+          <h3 class="mb-4">Nuestras Redes</h3>
+
+          <ul class="list-inline">
+            <li>
+              <a href=""><img src="img/facebook-logo-azul.png" width="40px" class="mb-4">
+            <p>/appcell.rcia</p></a>
+            </li>
+
+            <li>
+              <a href=""><img src="img/whatsapp-icono-azul.png" width="40px" class="mb-4">
+              <p>3757528025</p></a>            
+            </li>
+
+            <li>
+              <a href=""><img src="img/Round-Instagram-Logo-azul.png" width="40px" class="mb-4">
+              <p>/appcell_microeletronica</p></a>            
+            </li>
+
+          </ul>
+
+          </div>
+      
+        <div class="col-sm-12 col-md-6">
+          <form action="" method="POST" class="form-inline" id="formulario_contacto">
+            <div class="mb-3 col-sm-12">
+              <label class="form-label text-center position-relative" for=""><strong> Contanos sobre tu dispositivo</strong></label>
+              <select name="modelo" id="modelo" class="form-select" onchange="enviar(this.form)" required="" >
+                <option value="">selecciona el modelo</option>
+                  <option value="Godzilla">opcion-1</option>
+                  <option value="King-kong">opcion-2</option>
+                  <option value="Gidora">opcion-3</option>
+              </select>
+              <div class="invalid-feedback">Seleccione una opcion</div>
+            </div>
+
+            <div class="mb-3 col-sm-12">
+              <select name="problema" id="problema"  class="form-select" onchange="enviar(this.form)"  required="">
+                <option value="">selecciona el problema</option>
+                <option value="Bulbasur">opcion-1</option>
+                <option value="Pikachu">opcion-2</option>
+                <option value="Charizard">opcion-3</option>
+              </select>
+              <div class="invalid-feedback">Seleccione una opcion</div>
+            </div>
+
+            <div class="mb-3 col-sm-6 position-relative">
+              <input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre" required="">
+              <div class="valid-tooltip">Campo Completado</div>
+              <div class="invalid-tooltip">Ingrese un Nombre</div>
+            </div>
+
+
+            <div class="mb-3 col-sm-3 position-relative">
+              <input name="telefono" id="telefono" type="text" class="form-control" placeholder="telefono" required="">
+              <div class="valid-tooltip">Campo Completado</div>
+              <div class="invalid-tooltip">Ingrese un Numero de telefono</div>
+            </div>
+
+            <div class="mb-3 col-sm-3">
+              <textarea class="form-control" name="mensaje" id="mensaje" rows="3" style="resize:none" placeholder="Dejanos un mensaje" required=""></textarea>        
+            </div>
+            <br>
+            <input type="submit" id="boton_contacto" class="btn btn-primary" value="Enviar" >
+          </form>
         </div>
 
-        <div class="mb-3 col-sm-12">
-          <select name="problema" id="problema"  class="form-select" onchange="enviar(this.form)"  required="">
-            <option value="">selecciona el problema</option>
-            <option value="Bulbasur">opcion-1</option>
-            <option value="Pikachu">opcion-2</option>
-            <option value="Charizard">opcion-3</option>
-          </select>
-          <div class="invalid-feedback">Seleccione una opcion</div>
-        </div>
+          
 
-        <div class="mb-3 col-sm-6 position-relative">
-          <input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre" required="">
-          <div class="valid-tooltip">Campo Completado</div>
-          <div class="invalid-tooltip">Ingrese un Nombre</div>
-        </div>
-
-
-        <div class="mb-3 col-sm-3 position-relative">
-          <input name="telefono" id="telefono" type="text" class="form-control" placeholder="telefono" required="">
-          <div class="valid-tooltip">Campo Completado</div>
-          <div class="invalid-tooltip">Ingrese un Numero de telefono</div>
-        </div>
-
-        <div class="mb-3 col-sm-3">
-          <textarea class="form-control" name="mensaje" id="mensaje" rows="3" style="resize:none" placeholder="Dejanos un mensaje" required=""></textarea>        
-        </div>
-        <br>
-        <input type="submit" id="boton_contacto" class="btn btn-primary" value="Enviar" >
-      </form>
+      </div>
 
       <?php
         include "form_contacto.php";
@@ -185,8 +216,8 @@
     <!--Fin Formulario de contacto-->
 
     <div class="container mt-4">
-    <hr> 
-      <!--inicio carrousel-->
+    <hr class="sidebar-divider"> 
+    <!--inicio carrousel-->
         <h3 id="titulo_trabajos" class="  text-center text-center mt-5 mb-4">
           Trabajos Realizados
         </h3>
@@ -288,13 +319,13 @@
           </div>
           <!--finaliza 8 item-->
         </div>
-      <!--fin carrousel-->
+    <!--fin carrousel-->
 
     <hr>
 
     <!--Inicio Formulario consulta-->
-    
-      <h3 id="titulo_dispositivo" class="text-center mt-5 mb-5">Ver estado de mi equipo</h3>
+   
+      <h3 id="titulo_dispositivo" class="text-center mt-5 mb-5"><img src="img/hojo-icono.png" width="30px"> Ver estado de mi equipo</h3>
         
         <div id="form_divicion" class="col-12">
           <div class="formulario_consulta">
@@ -310,14 +341,14 @@
           <?php
             include("form_consulta.php");
           ?>
-        </div>
+        </div>      
+        <hr class="sidebar-divider">
       </div>
-      <hr>
     <!--Fin Formulario consulta-->
     
 
     <!--Inicio Sobre Nosotros-->
-      <h3 id="titulo_nosotros" class="text-center mb-5 mt-4">Sobre Nosotros</h3>
+      <h3 id="titulo_nosotros" class="text-center mb-5 mt-4"><img src="img/personas-icono.png" width="30px"> Sobre Nosotros</h3>
       
       <div class="container mt-4 ">
         <div class="row" id="texto_imagen">
@@ -345,12 +376,12 @@
           </div>
 
         </div>
-      </div>  
+       
     <!--Inicio Sobre Nosotros--> 
 
-    <hr>
+    <hr class="sidebar-divider">
     <!--Inicio cuadros-->
-      <h3 id="titulo_servicios" class="text-center mt-4">Te proporcionamos:</h3>
+      <h3 id="titulo_servicios" class="text-center mt-4"><img src="img/manos-icono.png" width="40px"> Te proporcionamos:</h3>
       
       <div id="cuadros" class=" mt-3" >
         <div class="row">
@@ -381,8 +412,86 @@
     <!--Fin cuadros-->
         </div>
       </div>
-    </div>
+      <hr class="sidebar-divider">
+
+    <!-- Inicio Instagram-->
+      <h3 id="titulo_instagram" class="text-center mt-4"><img src="img/instagram-icono-blanco.png" width="30px" alt="" srcset=""> Publicaciones De Instagram:</h3>
+  
+      <div class="owl-carousel owl-theme mt-4">
+          
+          <!--inicio 1 item-->
+          <div class="item mb-4">
+            <div class="card text-center">
+            <iframe id="sds" width="270" height="440" src="https://www.instagram.com/p/COs7bhpgv7Z/embed" frameborder="0"></iframe>
+            </div>
+          </div>
+          <!--finaliza 1 item-->
+
+          <!--inicio 2 item-->
+          <div class="item mb-4">
+            <div class="card text-center">
+            <iframe id="sds" width="270" height="440" src="https://www.instagram.com/p/CPlh-vMAb2O/embed" frameborder="0"></iframe>
+            </div>
+          </div>
+          <!--finaliza 2 item-->
+
+          <!--inicio 3 item-->
+          <div class="item mb-4">
+            <div class="card text-center">
+            <iframe id="sds" width="270" height="440" src="https://www.instagram.com/p/CWOOVYFApCJ/embed" frameborder="0"></iframe>
+            </div>
+          </div>
+          <!--finaliza 3 item-->
+
+          <!--inicio 4 item-->
+          <div class="item mb-4">
+            <div class="card text-center">
+            <iframe id="sds" width="270" height="440" src="https://www.instagram.com/p/CCeZQzCh5ru/embed" frameborder="0"></iframe>
+            </div>
+          </div>
+          <!--finaliza 4 item-->
+
+          <!--inicio 5 item-->
+          <div class="item mb-4">
+            <div class="card text-center">
+            <iframe id="sds" width="270" height="440" src="https://www.instagram.com/p/CEnaD5Nh69Y/embed" frameborder="0"></iframe>
+            </div>
+          </div>
+          <!--finaliza 5 item-->
+
+          <!--inicio 6 item-->
+          <div class="item mb-4">
+            <div class="card text-center">
+            <iframe id="sds" width="270" height="440" src="https://www.instagram.com/p/B_Vv3oepUMS/embed" frameborder="0"></iframe>
+            </div>
+          </div>
+          <!--finaliza 6 item-->
+
+          <!--inicio 7 item-->
+          <div class="item mb-4">
+            <div class="card text-center">
+            <iframe id="sds" width="270" height="440" src="https://www.instagram.com/p/CFvA23pBDlg/embed" frameborder="0"></iframe>
+            </div>
+          </div>
+          <!--finaliza 7 item-->
+
+          <!--inicio 8 item-->
+          <div class="item mb-4">
+            <div class="card text-center">
+            <iframe id="sds" width="270" height="440" src="https://www.instagram.com/p/CABtRFyJYlT/embed" frameborder="0"></iframe>
+            </div>
+          </div>
+          <!--finaliza 8 item-->
+        </div>
+      <!--fin carrousel-->
+    <!-- Fin Instagram-->
+       
+
+    </div> 
   </div>
+</div>
+
+  
 
     <?php
       include "partes/footer.php";
