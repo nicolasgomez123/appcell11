@@ -9,10 +9,10 @@ if($_POST){
     $pass = $_POST['txtpass'];
     $rol    = $_POST['rol'];
     $conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $query = $conexion->prepare("SELECT * FROM roles WHERE email = :user AND pass = :pass AND rol = :rol");
+    $query = $conexion->prepare("SELECT * FROM tipo WHERE email = :user AND pass = :pass AND tipo = :rol");
     $query->bindParam(":user", $user);
     $query->bindParam(":pass", $pass);
-    $query->bindParam(":rol", $rol);
+    $query->bindParam(":tipo", $rol);
     $query->execute();
     $usuario = $query->fetch(PDO::FETCH_ASSOC);
     if($usuario){

@@ -73,18 +73,12 @@ $password = "";
 $db= "appcell";
 
 
-try{
-    $conexion = new PDO(
-        "mysql:host=localhost;
-        dbname=".$db,
-        $user,
-        $password,
-        array(PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES UTF8'),
-    ); 
-    // echo "CONEXION EXITOSA";
-}catch(PDOException $e){
-    echo "CONEXION FALLIDA". $e->getMessage();
-}
+//database connection
+$link = mysql_connect($host, $user, $pass) or																	
+    die("No ha sido posible conectarse: " . mysql_error());;
+mysql_select_db($db_name);
+//sets encoding to utf8
+mysql_query("SET NAMES utf8");
 
 
 // return[
