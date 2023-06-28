@@ -1,108 +1,73 @@
-<?php 
-session_start();
-
-if(isset($_SESSION["usuario"])){
-
-?>
-
 <?php
-require_once "vistas/parte_superior.php"; 
+include("../conexion.php");
+
+$method = $_SERVER["REQUEST_METHOD"];
+
+switch ($method) {
+    case 'GET':
+        if (!isset($_GET['id'])) {
+            // Obtener todos los registros
+            $result = $con->query("SELECT * FROM clientes");
+
+            // Crear un array para almacenar los registros
+            $elementos = array();
+
+            // Iterar sobre cada fila de resultados y almacenar los campos en el array
+            while ($row = $result->fetch_assoc()) {
+                $elementos[] = $row;
+            }
+
+            // Devolver los campos en formato JSON
+            echo json_encode($elementos);
+        } else {
+            // Obtener un registro en particular
+            $id = intval($_GET['id']);
+            $result = $con->query("SELECT * FROM clientes WHERE id=$id");
+
+            // Crear un array para almacenar el registro
+            $elementos = array();
+
+            // Iterar sobre cada fila de resultados y almacenar los campos en el array
+            while ($row = $result->fetch_assoc()) {
+                $elementos[] = $row;
+            }
+
+            // Devolver los campos en formato JSON
+            echo json_encode($elementos);
+        }
+        break;
+
+    case 'POST':
+        // Leer el cuerpo de la solicitud y decodificarlo como JSON
+        $input = json_decode(file_get_contents('php://input'), true);
+
+        $id = $input["id"];
+        $cliente = $input["cliente"];
+        $codigo = $input["codigo"];
+        $modelo = $input["modelo"];
+        $falla = $input["falla"];
+        $observacion = $input["observacion"];
+        $fecha_ingreso = $input["fecha_ingreso"];
+        $fecha_salida = $input["fecha_salida"];
+        $precio = $input["precio"];
+        $imei = $input["imei"];
+        $estado = $input["estado"];
+
+        // Actualizar registros
+        $sql = "UPDATE clientes SET cliente=?, codigo=?, modelo=?, falla=?, observacion=?, fecha_ingreso=?, fecha_salida=?, precio=?, imei=?, estado=? WHERE id=?";
+        $query = $con->prepare($sql);
+        $query->bind_param("ssssssssssi", $cliente, $codigo, $modelo, $falla, $observacion, $fecha_ingreso, $fecha_salida, $precio, $imei, $estado, $id);
+        $query->execute();
+
+        // Devolver un código de estado de éxito
+        $data = array("estado" => true);
+        echo json_encode($data);
+        break;
+
+    default:
+        // Manejar otros métodos HTTP si es necesario
+        break;
+}
+
+mysqli_close($con);
 ?>
-
-<style>
-  #Perfil{
-    text-align: center;
-    margin-top: 10px;
-    width: 550px;
-    height: 350px;
-    margin: auto;
-
-}
-
-#img{
-  margin-top: 10px;
-  border-radius: 100px;
-  border: 3px solid #000;
-}
-
-
-#conf{
-  margin-top: 180px;
-  margin-right: 100px;
-}
-
-#tabla{
-  width: 500px;
-  text-align: center;
-  margin: auto;
-  color: #000;
-}
-
-</style>
-
-<div class="container">
-
-                <?php
-                include_once "../bd/conexion.php";
-
-                $sql= "SELECT * FROM roles";
-                $consultaSQL = $conexion->prepare($sql);
-                $consultaSQL->execute();
-
-                $usuarios = $consultaSQL->fetchAll(PDO::FETCH_OBJ);
-
-                  foreach($usuarios as $usuario){
-                ?>
-
-    <div class="row">
-      <div id="Perfil">
-         <div class="col-12">
-            <img src="<?php echo $usuario->imagen ?>" width="200px"  class="img-fluid" id="img">
-            <div id="tabla">    
-              <h3 class="mt-3 mb-3" ><strong><?php echo $_SESSION['usuario'];  ?></strong></h3>
-              <h3><?php echo $usuario->rol ?></h3>
-            </div>
-        </div>
-
-        <button type="button" class="btn btn-primary">Editar</button>
-       <?php } ?>
-        <!-- <form action="" method="POST" enctype="multipart/form-data">
-
-          <input type="file" name="imagen" value="<?php echo $usuario->imagen ?>">
-          
-          <button type="submit" name="subir" class="btn btn-primary">Guardar</button>
-
-        </form> -->
- 
-      </div>
-    </div>
-
-    <?php
-
-          if(isset($_POST['subir'])){
-
-            $ruta = "../images/";
-            $rut = $ruta.$usuario->id.".jpg";
-            $fichero = $ruta.basename($_FILES['imagen']['name']);
-            if(move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta.$usuario->id.".jpg")){
-
-            include_once "../bd/conexion.php";
-      
-            $sentencia = $conexion->prepare("UPDATE roles set imagen = '$rut' where id = '".$usuario->id."'");
-            $resultado = $sentencia->execute();
-
-          }
-          }
-
-    ?>
-
-</div>
-
-
-<?php
-}else{
-  header("Location: ../login.php");
-}
-?>
-
-<?php require_once "vistas/parte_inferior.php" ?>

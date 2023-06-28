@@ -1,0 +1,964 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed','Helvetica Neue',sans-serif;
+    text-decoration: none;
+}
+
+ 
+body {
+    background-color: #000;
+}
+
+/*Inicio estilos navbar*/
+    li{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    a:hover{
+        color: rgb(93, 109, 190);
+    }
+
+    header{
+        position: relative;
+        padding: 0 2rem;
+    }
+
+    .navbar{
+        width: 100%;
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .logo a{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .navbar .links{
+        display: flex;
+        gap: 2rem;
+        margin-right: 19rem;
+        margin-bottom: 2rem;
+    }
+
+    .navbar .toggle_btn{
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+
+    .action_btn{
+        background-color: rgb(58, 97, 137);
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor:pointer;
+        transition: scale 0.2 ease;
+    }
+
+    .action_btn:hover{
+        scale: 1.05;
+        color: #fff;
+    }
+
+    .action_btn:active{
+        scale:0.95;
+    }
+
+    /*Dropdown Menu*/
+    .dropdown_menu{
+        display: none;
+        position: absolute;
+        right: 2rem;
+        top: 60px;
+        height: 0;
+        width: 300px;
+        background: rgb(38, 60, 168);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .dropdown_menu.open{
+        height: 240px;
+    }
+
+
+    .dropdown_menu li{
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dropdown_menu .action_btn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /*Responsive Desing*/
+    @media(max-width: 992px){
+        .navbar .links,
+        .navbar .action_btn{
+            display: none;
+        }
+
+        .navbar .toggle_btn{
+            display: block;
+        }
+
+        .dropdown_menu{
+            display: block;
+        }
+    }
+
+    @media(max-width: 576px){
+        .dropdown_menu{
+            left: 2rem;
+            width: unset;
+        }
+    }
+/*fin estilos navbar*/
+
+/*Inicio imagen de fondo */
+.imagen_fondo{
+    background-image: url(https://cdn.images.express.co.uk/img/dynamic/59/1200x712/4268334.jpg?r=1678810722743);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 20em;
+    width: auto;
+    /* filter: brightness(85%); */
+}
+
+.imagen_fondo .texto-imagen{
+    font-size: 45px;
+}
+
+.imagen_fondo .texto-imagen{
+    -webkit-text-stroke: 2px #153fdf;
+    color: #29b4d557; 
+}
+/*Fin imagen de fondo */
+
+
+/*Inicio estilos Formulario consulta */
+.form_divicion{
+    display: flex;
+}
+ 
+.formulario_consulta, .datos{
+    display: grid;
+    padding: 40px;
+    width: 500px;
+    margin: auto;
+    margin-bottom: 50px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: 600;
+}
+
+.formulario_consulta{
+    margin-top: -0px ;
+    height: 240px;
+}
+
+#cliente, #tel, #estado,#codigo,#observacion{
+    width: auto;
+    padding: 10px;
+    color: #000;
+    margin: auto;
+    border: 5px solid #3f5efc ;
+    text-align: center;
+    
+}
+
+#observacion{
+    text-align: start;
+    color: #1686f5;
+}
+
+#boton_consulta{
+    width: 150px;
+    position: relative;
+    left: 30%;
+    border-radius: 50px;
+    outline: 2px solid black;
+    outline-offset: 3px;
+}
+/*Fin estilos Formulario consulta */
+
+
+
+/*Inicio estilos cuadros*/
+#cuadros{
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#cuadro_bg {
+    background-color: #fff;
+    padding: 11px;
+    margin: 50px;
+    border-radius: 10px;
+    width: 301px;
+    border: 1px solid #000;
+}
+
+
+#titulo_servicios,#titulo_trabajos, 
+#titulo_dispositivo,#titulo_contacto,
+#titulo_reparacion, #titulo_instagram{
+    background-color: #2e5fca;
+    padding: 14px;
+    margin: auto;
+    width: auto;
+    align-content: center;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 6px 6px 6px  #000;
+    font-size: 20px;
+}
+
+
+/*Fin estilos cuadros*/
+
+
+/*Inicio estilos form-consulta*/
+.formconsulta {
+    display: grid;
+    grid-template-columns: repeat(1, 66%);
+    width: auto;
+    margin: auto;
+    text-align: center;
+    margin-top: 14px;
+    padding-bottom: 44px;
+    border-radius: 1px;
+    justify-content: space-evenly;
+    color: white;
+    border-radius: 25px;
+}
+
+    
+/* Inicio estilo Footer */
+footer{
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 8%;
+    background-color: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 17px;
+}
+
+
+.logo{
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.social-icons-container .footer-menu-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.social-icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 1px solid #f2f2f2;
+    margin: 1rem;
+}
+
+/* .social-icon:hover{
+    background-color: #121212;
+    filter: invert(1);
+} */
+
+.footer-menu-container{
+    list-style-type: none;
+    color: #f2f2f2;
+    font-size: 18px;
+}
+
+.menu-item{
+    margin: 1rem 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.menu-item:hover{
+    opacity: 1;
+}
+
+.copyringht{
+    color: #f2f2f2;
+    opacity: 0.3;
+    text-align: center;
+}
+/*Fin estilo footer*/
+
+
+/*Inicio estilo carrousel*/
+.container-slider{
+    margin:  0 auto;
+    width: 60%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides{
+    display: flex;
+    height: 100%;
+}
+
+.slide{
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide-controls{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#next-btn, #prev-btn{
+    cursor: pointer;
+    background: transparent;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    color: #fff;
+}
+
+#next-btn:focus, 
+#prev-btn:focus{
+    outline: none;
+}
+
+.slide-content{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform : translateY(50%);
+    font-size: 60px;
+    color: #fff;
+}
+/*Fin estilos carrousel*/
+
+
+/*Inicio estilos form-contacto*/
+.container-form-contacto{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    padding: 20px;
+    gap: 10px;
+    width: auto;
+    margin: auto;
+}
+
+.box-info{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.box-info > h3{
+    text-align: left;
+    letter-spacing: 5px;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.data > p{
+    font-size: 1rem;
+}
+
+.data > p > i{
+    color: #2a1bff;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.links{
+    display: flex;
+    gap: 15px;
+}
+
+.links > a{
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    background: rgb(20, 37, 220);
+    text-align: center;
+    transition: .1s;
+}
+
+.links > a > i{
+    color: #fff;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.form-cons{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+.input-box{
+    position: relative;
+}
+
+.input-box > input{
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    outline: none;
+    background: rgba(255, 255, 255, .1);
+    border: 3px solid transparent;
+    letter-spacing: 1px;
+    transition: .3s;
+    color: #fff;
+}
+
+.input-box > input:focus,
+.input-box > textarea{
+    border-bottom: 3px solid #2a1bff;
+    animation: shake .2s;
+}
+
+.input-box > input::placeholder,
+.input-box > textarea::placeholder{
+    color: #a3a3a3;
+}
+
+.input-box > input:focus::placeholder,
+.input-box > textarea:focus::placeholder{
+    color: transparent;
+}
+
+
+.input-box > textarea{
+    width: 100%;
+    height: 130px;
+    background: rgba(255, 255, 255, .1);
+    border: 3px solid transparent;
+    letter-spacing: 1px;
+    transition: .3s;
+    color: #fff;
+    padding: 10px;
+    outline: none;
+}
+
+.input-box > select{
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 255, 255, .1);
+    border: 3px solid transparent;
+    letter-spacing: 1px;
+    transition: .3s;
+    color: #a3a3a3;
+    padding: 10px;
+    outline: none;
+}
+
+.input-box > select > option{
+    background: rgba(255, 255, 255, .1);
+    color: #a3a3a3;
+
+}
+
+.input-box > i{
+    color: rgba(255, 255, 255, .3);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    transition: .3s;
+}
+
+.input-box > input:focus ~ i{
+    color: #2a1bff;
+}
+
+.form-cons > button{
+    background: #3143e8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px;
+    transition: .2s;
+}
+
+
+.form-cons > button:hover,
+.links > a:hover{
+    background: rgb(20, 37, 220);
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+@media screen and (max-width:600px){
+    .container-form-contacto{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box-info{
+        gap: 15px;
+    }
+
+    .box-info > h1{
+        font-size: 1.5rem;
+    }
+
+}
+/*Fin estilos form-contacto*/
+
+
+/*Inicio estilos Tarjetas de reparacion*/
+.container-card{
+    position:static;
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.product .product-card{
+    z-index: 1;
+    background: #1d212b;
+    position: relative;
+    width: 290px;
+    height: 440px;
+    margin: 40px;
+    border-radius: 10px;
+}
+
+.product .product-card:before{
+    content: '';
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.product .product-card .product-img{
+    z-index: 1;
+    position: absolute;
+    max-width: 238px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product .product-card .name{
+    z-index: 2;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 130px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.product .product-card .costo{
+    z-index: 2;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 77px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.product .product-card .price{
+    z-index: 2;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 67px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.product .product-card .popup-btn{
+    z-index: 2;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.product .popup-view{
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.product .popup-view.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.product .popup-card{
+    position: relative;
+    display: flex;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+.product .popup-card .product-img{
+    z-index: 2;
+    background: #1D212B;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 90%;
+    transform: translateY(25px);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.product .popup-card .product-img img{
+    z-index: 2;
+    position: relative;
+    width: 250px;
+    left: -50px;
+}
+
+
+.product .popup-card .info{
+    z-index: 2;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.product .popup-card .close-btn{
+    color: #555;
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.product .popup-card .info h2{
+    font-size: 40px;
+    line-height: 20px;
+    margin: 10px;
+}
+
+.product .popup-card .info h2 span{
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.product .popup-card .info p{
+    font-size: 15px;
+    margin: 10px;
+}
+
+.product .popup-card .info .price{
+    font-size: 45px;
+    font-weight: 300;
+    margin: 10px;
+}
+
+.product .popup-card .info .add-cart-btn{
+    color: #fff;
+    background: #009DD2;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 10px auto;
+    padding: 10px 50px;
+    border-radius: 20px;
+}
+
+@media (max-width: 900px){
+    .product .popup-card{
+        flex-direction: column;
+        width: 550px;
+        height: auto;
+    }
+
+    .product .popup-card .product-img{
+        z-index: 3;
+        width: 100%;
+        height: 200px;
+        transform: translateY(0);
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .product .popup-card .product-img img{
+        left: initial;
+        max-width: 100%;
+    }
+
+    .product .popup-card .info{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .product .popup-card .info h2{
+        margin: 20px 5px 5px 5px;
+        font-size: 25px;
+    }
+
+    .product .popup-card .info h2 span{
+        font-size: 10px;
+    }
+
+    .product .popup-card .info h2 p{
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    .product .popup-card .info price{
+        margin: 5px;
+        font-size: 30px;
+    }
+
+    .product .popup-card .info .add-cart-btn{
+        margin: 5px auto;
+        padding: 5px 40px;
+        font-size: 14px;
+    }
+
+    .product .popup-card .close-btn{
+       z-index: 4;
+    }
+}
+/*Fin estilos Tarjetas de reparacion*/
+
+/*Estilos Carrousel 2*/
+
+  @media (min-width: 768px) {
+    .carrusel2 {
+      margin: 0 60px;
+    }
+  }
+  
+  .carrusel2 h2 {
+    font-size: 45px;
+    line-height: 38px;
+    padding-bottom: 50px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .carrusel-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 304px;
+    padding: 10px 0;
+    margin: auto;
+    max-width: 90vw;
+    overflow: hidden;
+  }
+  
+  .carrusel-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .carrusel2 {
+    position: relative;
+    width: auto;
+    padding: 0 18px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+  }
+  
+  .carrusel2 h4 {
+    position: absolute;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 23px;
+    color: #ffffff;
+    padding: 15px;
+  }
+
+  .carrusel2 .card {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;  
+  }
+
+
+  .carrusel2 h4 small {
+    font-size: 15px;
+    display: block;
+  }
+  
+  .carrusel2 a img {
+    object-fit: cover;
+    height: 300px;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+  }
+  
+  @media (min-width: 768px) {
+    .carrusel2 {
+      width: 275px;
+    }
+  
+    .carrusel2 a img {
+      width: 250px;
+    }
+  }
+  
+  .carrusel-arrow {
+    border-radius: 30px;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+  }
+  
+  .carrusel-arrow:focus {
+    outline: 0;
+  }
+  
+  .carrusel-arrow svg {
+    width: 12px;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .carrusel-prev {
+    left: 0;
+  }
+  
+  .carrusel-next {
+    right: 0;
+  }
+/*Fin Estilos Carrousel 2*/
