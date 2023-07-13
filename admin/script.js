@@ -15,7 +15,7 @@ fetch("lista_clientes.php")
     cargarDatos(datos);
 
     buscador.addEventListener("keypress", (e)=>{
-      // console.log(buscador)
+      // console.log(buscador.value)
       filtrarBuscador(datos)
      })
      
@@ -194,7 +194,20 @@ function borrarCliente(event) {
   const id = button.getAttribute("data-id");
 
   // Confirmar la eliminación con el usuario
-  if (confirm("¿Estás seguro de que deseas eliminar este cliente?")) {
+  //if (confirm("¿Estás seguro de que deseas eliminar este cliente?")) {
+  // }
+  Swal
+    .fire({
+        title: "¿Eliminar cliente?",
+        text: "¿Estás seguro de que deseas eliminar este cliente?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "Cancelar",
+    })
+    .then(resultado => {
+      if (resultado.value) {
+      
     // Enviar una solicitud fetch para eliminar el cliente
     fetch('eliminar_cliente.php', {
       method: 'POST',
@@ -220,7 +233,14 @@ function borrarCliente(event) {
         console.error(error);
         lanzarAlerta("Error", "Ocurrió un error al procesar la solicitud", "error");
       });
-  }
+        // Hicieron click en "Sí"
+        console.log("*se elimina la venta*");
+      } else {
+          // Dijeron que no
+          console.log("*NO se elimina la venta*");
+      }
+  });
+  
 }
 
 //----------------Agregar nuevo usuario------------------------------
@@ -367,86 +387,20 @@ function actualizarControlesPaginacion(page, pageSize, total) {
 
 //-------------Fin Paginacion-----------------
 
+//-------------Inicio generado de codigo-----------------
+let numeros= "0123456789"
+let letras= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let todo= numeros + letras
 
+function generateRandomNumber() {
+  let longitud= 15
+  let password= ""
+  for(let x = 0; x<longitud; x++){
+    let aleatorio= Math.floor(Math.random() * todo.length)
+    password += todo.charAt(aleatorio)
+  }
 
-
-
-
-
-
- // formulario.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   // Obtener los datos del formulario
-//   const modalCliente = document.getElementById("modal-cliente").value;
-//   const modalCodigo = document.getElementById("modal-codigo").value;
-//   const modalModelo = document.getElementById("modal-modelo").value;
-//   const modalFalla = document.getElementById("modal-falla").value;
-//   const modalObservacion = document.getElementById("modal-observacion").value;
-//   const modalFecha_ingreso = document.getElementById("modal-fecha_ingreso").value;
-//   const modalFecha_salida = document.getElementById("modal-fecha_salida").value;
-//   const modalPrecio = document.getElementById("modal-precio").value;
-//   const modalImei = document.getElementById("modal-imei").value;
-//   const modalEstado = document.getElementById("modal-estado").value;
-
-//   // Crear objeto con los datos a enviar
-//   const dataModal = {
-//     cliente: modalCliente,
-//     codigo: modalCodigo,
-//     modelo: modalModelo,
-//     falla: modalFalla,
-//     observacion: modalObservacion,
-//     fecha_ingreso: modalFecha_ingreso,
-//     fecha_salida: modalFecha_salida,
-//     precio: modalPrecio,
-//     imei: modalImei,
-//     estado: modalEstado
-//   };
-  
-//   console.log(dataModal.cliente)
-//   console.log(dataModal.codigo) 
-//   console.log(dataModal.modelo)
-//   console.log(dataModal.falla)
-//   console.log(dataModal.observacion) 
-//   console.log(dataModal.fecha_ingreso)
-//   console.log(dataModal.fecha_salida)
-//   console.log(dataModal.precio) 
-//   console.log(dataModal.imei)
-//   console.log(dataModal.estado)
-
-//   // Deshabilitar el botón mientras se envían los datos
-//   formulario.querySelector('button[type="submit"]').disabled = true;
-
-//   // Enviar los datos mediante una solicitud fetch
-//   fetch('agregar_cliente.php', {
-//     method: 'POST',
-//      headers: {
-//        'Content-Type': 'application/json'
-//      },
-//     body: JSON.stringify(dataModal)
-//   })
-//     .then(response => response.json())
-//     .then(data => {
-//       // Hacer algo con la respuesta del servidor, si es necesario
-//       console.log(data);
-
-//       // Habilitar el botón nuevamente después de completar la solicitud
-//       formulario.querySelector('button[type="submit"]').disabled = false;
-
-//       // Cerrar el modal si se ha agregado correctamente el cliente
-//       if (data.success) {
-//         $('#modal-insertar').modal('hide');
-//         // Mostrar una alerta si todo está bien
-//         lanzarAlerta("Solicitud exitosa", "Se agregó al usuario con éxito", "success");
-//         obtenerLista();
-//       } else {
-//         // Mostrar una alerta si hay un error
-//         lanzarAlerta("Solicitud fallida", "No se pudo agregar al usuario", "error");
-//       }
-//     })
-//     .catch(error => {
-//       // Manejar cualquier error de la solicitud
-//       console.error(error);
-//       // Habilitar el botón nuevamente en caso de error
-//       formulario.querySelector('button[type="submit"]').disabled = false;
-//     });
-// });
+  // Asigna el número aleatorio al input
+  document.getElementById('modal-codigo').value = password;
+}
+//-------------Fin generado de codigo-----------------

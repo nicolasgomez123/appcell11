@@ -1,6 +1,4 @@
 <?php 
-
-include("../conexion.php");  
 require_once "vistas/parte_superior.php"; 
 ?>
     <style>
@@ -167,7 +165,7 @@ require_once "vistas/parte_superior.php";
 
             <div class="mb-3">
              <label for="codigo" class="form-label">Código</label>
-             <input type="text" class="form-control" id="codigo" name="codigo" required>
+             <input type="text" class="form-control" id="codigo" name="codigo">
             </div>
 
             <div class="mb-3">
@@ -230,12 +228,12 @@ require_once "vistas/parte_superior.php";
 <!--Fin Modal editar-->
 
 
-<!-- Modal Insertar clientes -->
+<!-- Modal Insertar Trabajo -->
 <div class="modal fade" id="modal-insertar" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Insertar Nuevo Cliente</h5>
+        <h5 class="modal-title">Insertar Nuevo Trabajo</h5>
         <button type="button" class="close" data-dismiss="modal">
           <span aria-hidden="true">×</span>
           <span class="sr-only">Close</span>
@@ -245,11 +243,12 @@ require_once "vistas/parte_superior.php";
         <form id="form_agregar">
           <div class="mb-3">
             <label for="modal-cliente" class="form-label" name="modal-cliente">Cliente</label>
-            <input type="text" class="form-control"  id="modal-cliente" required>
+            <input type="text" class="form-control"  id="modal-cliente"  required>
           </div>
           <div class="mb-3">
             <label for="modal-codigo" class="form-label" name="modal-codigo">Código</label>
-            <input type="text" class="form-control" id="modal-codigo" required>
+            <input type="text" class="form-control" id="modal-codigo" disabled>
+            <button class="btn btn-primary" onclick="generateRandomNumber()">Generar Codigo</button>
           </div>
           <div class="mb-3">
             <label for="modal-modelo" class="form-label" name="modal-modelo">Modelo</label>

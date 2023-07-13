@@ -1,5 +1,12 @@
 <?php
-  include("conexion.php");
+session_start();
+if(isset($_SESSION['nombre'])){
+    // En caso contrario redirigimos el visitante a otra página
+    header('Location: login/login.php');
+    die();
+}
+
+
 ?>
 
 <!doctype html>
@@ -30,7 +37,7 @@
     <div class="navbar">
       <div class="logo">
         <a href="#">
-          <img src="./img/logo-principal.png" width="45px" alt="" srcset="">
+          <img src="./img/logo-principal.png" width="50px" alt="" srcset="">
         </a>
       </div>
       <ul class="links">
@@ -40,7 +47,7 @@
         </li>
 
         <li>
-          <a href="#titulo_nosotros">Nosotros</a>
+          <a href="#titulo_dispositivo">Ver mi equipo</a>
         </li>
 
         <li>
@@ -56,7 +63,7 @@
         </li>
 
         <li>
-          <a href="login/login.html" class="action_btn">      
+          <a href="login/login.php" class="action_btn">      
             Registrarse
           </a>
         </li>
@@ -69,24 +76,29 @@
 
     <div class="dropdown_menu">
         <li>
-          <a href="index.php">
-          <img id="icono_inicio" src="img/inicio-icono.png" width="25px"> Inicio</a>
+            <a href="index.php">Inicio</a>
         </li>
 
-        <li><a href="#titulo_nosotros">
-          <img id="icono_nosotros" src="img/nosotros-icono.png" width="25px"> Nosotros</a></li>
         <li>
-          <a href="#titulo_trabajos">
-          <img id="icono_trabajos" src="img/trabajos-iconos.png" width="25px"> Trabajos</a>
+          <a href="#titulo_dispositivo">Ver mi equipo</a>
+        </li>
+
+        <li>
+          <a href="#titulo_reparacion">Servicos</a>
+        </li>
+
+        <li>
+          <a href="#titulo_trabajos">Trabajos</a>
         </li>
         
         <li>
-          <a href="#titulo_contacto">
-          <img id="icono_contacto" src="img/telefono-icono.png" width="25px"> Contacto</a>
+          <a href="#titulo_contacto">Contacto</a>
         </li>
         
         <li>
-          <a href="login/login.html" class="action_btn"> Registrarse</a>
+          <a href="login/login.php" class="action_btn">      
+             Registrarse
+          </a>        
         </li>
     </div>
   </header>
@@ -349,23 +361,24 @@
           <h4>Verificación de código de consulta</h4>
           <form id="myForm">
               <div class="form-group">
-                  <input type="text" class="form-control" id="codigo" name="codigo" required placeholder="Ingrese su codigo">
+                  <input type="text" class="form-control" id="codigo"   name="codigo" required>
               </div>
               <button type="submit" class="btn btn-primary mt-3">Verificar</button>
           </form>
       </div>
 
-      <div id="modalData" class="modal fade">
-        <div class="modal-dialog">
+      <div id="modalData" class="modal fade" tabindex="-1"  role="dialog">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                   <h5 class="modal-title">Datos del cliente</h5>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <button type="button" class="close btn btn-dark" data-dismiss="modal" aria-label="Cerrar">x</button>
+
               </div>
               <div class="modal-body">
                 <div id="modalContent"></div>
               </div>
-          </div>
+            </div>
         </div>
       </div>
   
@@ -373,13 +386,11 @@
 
 
 <hr class="sidebar-divider">
-<!-- Inicio Instagram-->
+<!-- Inicio carrousel Instagram-->
 <h3 id="titulo_instagram" class="text-center mt-4 mb-5"><img src="img/instagram-icono-blanco.png" width="30px" alt="" srcset=""> Publicaciones De Instagram:</h3>
-  
-
 <div class="carrusel-list" id="carrusel-list">
     <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev"
-      onclick="app.processingButton(event)">
+      onclick="app.processingButton()">
       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
           class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512">
@@ -498,20 +509,17 @@
   </div>
 
 </div>
-
     
 <!-- Fin Instagram-->
-
-
 </div>
 
 <!--Inicio Footer--> 
 <footer class="mt-5">
   <!-- <img src="./img/logo-principal.png" width="45px" alt="" srcset=""> -->
   <div class="social-icons-container">
-    <a href="#" class="social-icon"><img src="https://icon-library.com/images/instagram-png-icon/instagram-png-icon-2.jpg" width="45px" alt="" srcset=""></a>
-    <a href="#" class="social-icon"><img src="img/Facebook-logo.png" width="45px" alt="" srcset=""></a>
-    <a href="#" class="social-icon" ><img src="img/whatsapp-logo.png" width="45px" alt="" srcset=""></a>
+    <a href="#" class="social-icon bg3"><i class="fa fa-instagram"></i></a>
+    <a href="#" class="social-icon bg1"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="social-icon bg2" ><i class="fa fa-twitter"></i></a>
   </div>
   <ul class="footer-menu-container">
     <!-- <li class="menu-item">Nosotros</li>

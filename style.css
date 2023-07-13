@@ -33,7 +33,7 @@ body {
 
     .navbar{
         width: 100%;
-        height: 60px;
+        height: 70px;
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
@@ -105,6 +105,8 @@ body {
     .dropdown_menu li{
         padding: 0.7rem;
         display: flex;
+        height: 15%;
+        margin: 3px;
         align-items: center;
         justify-content: center;
     }
@@ -151,12 +153,9 @@ body {
 }
 
 .imagen_fondo .texto-imagen{
-    font-size: 45px;
-}
-
-.imagen_fondo .texto-imagen{
-    -webkit-text-stroke: 2px #153fdf;
-    color: #29b4d557; 
+    font-size: 50px; 
+    -webkit-text-stroke: 1px #e6e6ee;
+    color: #192bd057; 
 }
 /*Fin imagen de fondo */
 
@@ -186,11 +185,11 @@ body {
 #cliente, #tel, #estado,#codigo,#observacion{
     width: auto;
     padding: 10px;
-    color: #000;
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
     margin: auto;
-    border: 5px solid #3f5efc ;
     text-align: center;
-    
+    border: 3px solid transparent;
 }
 
 #observacion{
@@ -223,11 +222,12 @@ body {
 }
 
 #cuadro_bg {
-    background-color: #fff;
     padding: 11px;
     margin: 50px;
     border-radius: 10px;
+    color: #e3e0e0;
     width: 301px;
+    background-color: rgba(255, 255, 255, .1);
     border: 1px solid #000;
 }
 
@@ -265,6 +265,13 @@ body {
     border-radius: 25px;
 }
 
+.modal-content{
+    background-color: #2b68b3;
+    color: #fff;
+}
+
+/*Fin estilos form-consulta*/
+
     
 /* Inicio estilo Footer */
 footer{
@@ -287,7 +294,7 @@ footer{
     margin-bottom: 1rem;
 }
 
-.social-icons-container .footer-menu-container{
+.social-icons-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -296,16 +303,27 @@ footer{
 }
 
 .social-icon{
-    height: 50px;
+    font-size: 25px;
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    justify-content: center;
+    align-items: center;
     width: 50px;
-    border-radius: 1px solid #f2f2f2;
-    margin: 1rem;
-}
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+  }
+  
+  .social-icon:hover {
+    color: #fff;
+    background-color: #333333;
+  }
 
-/* .social-icon:hover{
-    background-color: #121212;
-    filter: invert(1);
-} */
+.bg1 {background-color: #3b5998}
+.bg2 {background-color: #1da1f2}
+.bg3 {background-color: #d358a2}
 
 .footer-menu-container{
     list-style-type: none;
@@ -621,7 +639,7 @@ footer{
 
 .product .product-card .name{
     z-index: 2;
-    color: #fff;
+    color: #f0eded;
     position: absolute;
     width: 100%;
     text-align: center;
@@ -671,7 +689,7 @@ footer{
 
 .product .popup-view{
     z-index: 2;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(139, 138, 138, 0.5);
     position: fixed;
     top: 0;
     right: 0;
@@ -700,7 +718,7 @@ footer{
 
 .product .popup-card .product-img{
     z-index: 2;
-    background: #1D212B;
+    background: #181313;
     position: relative;
     display: flex;
     justify-content: center;
@@ -722,7 +740,7 @@ footer{
 
 .product .popup-card .info{
     z-index: 2;
-    background: #fff;
+    background: #202020;
     display: flex;
     flex-direction: column;
     width: 55%;
@@ -733,7 +751,7 @@ footer{
 }
 
 .product .popup-card .close-btn{
-    color: #555;
+    color: #ebe1e1;
     z-index: 3;
     position: absolute;
     right: 0;
@@ -757,6 +775,11 @@ footer{
 .product .popup-card .info p{
     font-size: 15px;
     margin: 10px;
+    color: #e6e1e1;
+}
+  
+.product .popup-card .info h3{
+    color: #e6e1e1;
 }
 
 .product .popup-card .info .price{
@@ -962,3 +985,4 @@ footer{
     right: 0;
   }
 /*Fin Estilos Carrousel 2*/
+
